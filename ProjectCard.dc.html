@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300..800&family=Figtree:wght@300..700&display=swap" rel="stylesheet">
+<style>
+a { color: inherit; text-decoration: none; }
+</style>
+</helmet>
+<a href="{{ href }}" onClick="{{ onNav }}" onMouseEnter="{{ enter }}" onMouseLeave="{{ leave }}" style="display:block;color:#11131A">
+  <div ref="{{ panelRef }}" style="{{ panelStyle }}">
+    <div style="{{ scaleStyle }}">
+      <div style="position:relative;overflow:hidden;aspect-ratio:16/9;border-radius:clamp(10px,1.2vw,18px);background:#EBEDF1">
+        <div style="{{ mediaStyle }}"></div>
+        <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+          <video ref="{{ vidRef }}" src="{{ video }}" muted="{{ true }}" loop="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="auto" onPlaying="{{ onPlaying }}" style="{{ videoStyle }}"></video>
+        </sc-if>
+        <span style="{{ labelStyle }}">{{ placeholderLabel }}</span>
+      </div>
+      <div style="{{ capStyle }}">
+        <div style="min-width:0">
+          <h3 style="color:#11131A;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(28px,calc(2vw + 20px),44px);letter-spacing:-0.035em;line-height:1.25;margin:0">{{ title }}</h3>
+          <p style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;color:#11131A;margin:8px 0 0;text-wrap:pretty">{{ desc }}</p>
+        </div>
+        <div style="{{ tagWrap }}"><sc-for list="{{ tagList }}" as="t" hint-placeholder-count="2"><span style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:24px;color:#646873;border:1px solid #DCDFE5;border-radius:8px;padding:4px 8px;white-space:nowrap">{{ t.label }}</span></sc-for></div>
+      </div>
+    </div>
+  </div>
+</a>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:720,&quot;height&quot;:520},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Project title&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;desc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;One line about the project.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tagLine&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;BRANDING - MOTION&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;img&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;video&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;href&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;hoverColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#F7F8FA&quot;,&quot;options&quot;:[&quot;#F7F8FA&quot;,&quot;#EFEFEF&quot;,&quot;#12110F&quot;,&quot;#F1F1EF&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;hoverScale&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.94,&quot;min&quot;:0.86,&quot;max&quot;:1,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;},&quot;onNav&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(e: MouseEvent) =&gt; void&quot;}}">
+const STRIPES = "repeating-linear-gradient(135deg,#F7F8FA 0 10px,#EBEDF1 10px 20px)";
+
+class Component extends DCLogic {
+  state = { on: false, vidOn: false, tiny: false, ratio: 0 };
+  panelRef = React.createRef();
+  vidRef = React.createRef();
+
+  playVideo(on) {
+    const v = this.vidRef.current;
+    if (!v) return;
+    if (on) { try { v.currentTime = 0; const p = v.play(); if (p && p.catch) p.catch(() => {}); } catch (e) {} }
+    else { this.setState({ vidOn: false }); v.pause(); try { v.currentTime = 0; } catch (e) {} }
+  }
+
+  componentDidMount() {
+    this.measure = () => {
+      const el = this.panelRef.current;
+      const r = el ? el.getBoundingClientRect() : null;
+      this.setState({
+        tiny: window.innerWidth < 520 || (r && r.width ? r.width < 520 : false),
+        ratio: r && r.width ? r.height / r.width : 0
+      });
+    };
+    this.measure();
+    requestAnimationFrame(this.measure);
+    window.addEventListener("resize", this.measure, { passive: true });
+    if ("ResizeObserver" in window) this.ro = new ResizeObserver(() => this.measure());
+    if ("IntersectionObserver" in window) {
+      this.io = new IntersectionObserver(([e]) => {
+        const v = this.vidRef.current;
+        if (!v) return;
+        const vis = e.isIntersecting && e.intersectionRatio >= 0.5;
+        if (vis === !!this.state.inView) return;
+        this.setState({ inView: vis });
+        if (vis) { v.loop = true; v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+        else v.pause();
+      }, { threshold: [0, 0.5, 1] });
+    }
+    this.attach();
+    let n = 0; const retry = () => { if (this.attached || n++ > 60) return; this.attach(); requestAnimationFrame(retry); }; requestAnimationFrame(retry);
+  }
+  attach() {
+    const el = this.panelRef.current;
+    if (!el || this.attached === el) return;
+    this.attached = el;
+    if (this.ro) this.ro.observe(el);
+    if (this.io) this.io.observe(el);
+    this.measure && this.measure();
+  }
+  componentDidUpdate() { this.attach(); }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.measure);
+    if (this.io) this.io.disconnect();
+    if (this.ro) this.ro.disconnect();
+  }
+
+  renderVals() {
+    const on = this.state.on;
+    const img = this.props.img || "";
+    const title = this.props.title || "";
+    const tiny = this.state.tiny;
+    const sy = this.props.hoverScale ?? 0.94;
+    const sx = sy;
+    return {
+      href: this.props.href || "#",
+      title: title,
+      desc: this.props.desc || "",
+      tagLine: this.props.tagLine || "",
+      tagList: (this.props.tags || (this.props.tagLine ? this.props.tagLine.split(/\s*[·-]\s*/) : [])).map(label => ({ label })),
+      tagWrap: "display:flex;flex-wrap:wrap;gap:8px;justify-content:" + (tiny ? "flex-start" : "flex-end") + ";padding-top:" + (tiny ? "0" : "6px") + ";flex-shrink:1;min-width:0;max-width:" + (tiny ? "none" : "50%"),
+      placeholderLabel: img ? "" : title + " — image",
+      onNav: this.props.onNav,
+      enter: () => { if (window.matchMedia("(hover: none)").matches) return; this.setState({ on: true }); },
+      leave: () => { this.setState({ on: false }); },
+      panelRef: this.panelRef,
+      vidRef: this.vidRef,
+      video: this.props.video || "",
+      hasVideo: !!this.props.video,
+      onPlaying: () => { if (!this.state.vidOn) this.setState({ vidOn: true }); },
+      videoStyle: "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:" + (this.state.vidOn ? 1 : 0) + ";transition:opacity 300ms ease;pointer-events:none;",
+      panelStyle: "border-radius:clamp(18px,2.4vw,34px);background:" + (on ? (this.props.hoverColor || "#F7F8FA") : "transparent") + ";transition:background 450ms cubic-bezier(0.16,1,0.3,1);",
+      scaleStyle: "transform-origin:50% 50%;will-change:transform;backface-visibility:hidden;transform:scale(" + (on ? sx : 1) + "," + (on ? sy : 1) + ");transition:transform 420ms cubic-bezier(0.4,0,0.2,1);",
+      mediaStyle: "position:absolute;inset:0;background-position:center;background-repeat:no-repeat;transition:transform 1000ms cubic-bezier(0.16,1,0.3,1);transform:scale(1);" + (img ? "background-image:url('" + img + "');background-size:cover;" : "background-image:" + STRIPES + ";"),
+      labelStyle: img ? "display:none" : "position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:Figtree,sans-serif;font-weight:500;font-size:12px;line-height:1.5;color:#646873;padding:0 16px",
+      capStyle: "display:flex;align-items:flex-start;flex-direction:" + (tiny ? "column" : "row") + ";justify-content:space-between;gap:" + (tiny ? "12px" : "clamp(16px,2vw,32px)") + ";margin:20px 0 0;"
+    };
+  }
+}
+</script>
+</body>
+</html>

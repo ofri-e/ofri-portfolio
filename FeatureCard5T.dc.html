@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300..800&family=Figtree:wght@300..700&display=swap" rel="stylesheet">
+<style>
+a { color: inherit; text-decoration: none; }
+a:hover { color: inherit; }
+</style>
+</helmet>
+<div data-feature-card="1" onMouseEnter="{{ enter }}" onMouseLeave="{{ leave }}" ref="{{ rootRef }}" style="{{ frameStyle }}">
+  <div style="{{ imgWrapStyle }}">
+    <div style="{{ mediaStyle }}"></div>
+    <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}">
+      <video ref="{{ vidRef }}" src="{{ video }}" muted="{{ true }}" loop="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" preload="metadata" onPlaying="{{ onPlaying }}" style="{{ videoStyle }}"></video>
+    </sc-if>
+    <sc-if value="{{ hasScreen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+        <img src="{{ screen }}" alt="{{ title }} app screen" style="{{ screenStyle }}">
+      </div>
+    </sc-if>
+  </div>
+<sc-if value="{{ stacked }}" hint-placeholder-val="{{ false }}">
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'title tags' 'role role' 'desc cta';column-gap:24px;row-gap:12px;align-items:start;text-align:left;min-width:0;padding:0 8px 8px">
+    <h3 style="grid-area:title;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(24px,calc(1.6vw + 14px),36px);line-height:1.25;letter-spacing:-0.01em;color:#11131A;margin:0;text-wrap:balance">{{ title }}</h3>
+    <div style="grid-area:tags;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px;padding-top:6px;max-width:360px">
+      <sc-for list="{{ tags }}" as="t" hint-placeholder-count="3">
+        <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">{{ t.label }}</span>
+      </sc-for>
+    </div>
+    <p style="grid-area:role;font-family:Figtree,sans-serif;font-size:16px;line-height:1.6;color:#646873;margin:0;text-wrap:pretty"><span style="font-weight:600;color:#11131A">Role:</span> {{ role }}</p>
+    <p style="grid-area:desc;align-self:center;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;margin:12px 0 0;max-width:65ch;text-wrap:pretty">{{ desc }}</p>
+    <a href="{{ href }}" onClick="{{ onNav }}" onMouseEnter="{{ ctaEnter }}" onTouchStart="{{ ctaPress }}" onMouseLeave="{{ ctaLeave }}" data-cursor-view="1" style="{{ ctaStyle }}"><span style="{{ ctaFill }}"></span><span style="position:relative">View case study</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="{{ ctaArrowStyle }}"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+  </div>
+</sc-if>
+<sc-if value="{{ sideBy }}" hint-placeholder-val="{{ true }}">
+  <div style="display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;gap:20px;min-width:0">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <h3 style="font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(24px,calc(1.6vw + 14px),36px);line-height:1.25;letter-spacing:-0.01em;color:#11131A;margin:0;text-wrap:balance">{{ title }}</h3>
+      <p style="font-family:Figtree,sans-serif;font-size:16px;line-height:1.6;color:#646873;margin:0;text-wrap:pretty"><span style="font-weight:600;color:#11131A">Role:</span> {{ role }}</p>
+    </div>
+    <p style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;color:#11131A;margin:0;max-width:65ch;text-wrap:pretty">{{ desc }}</p>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ tags }}" as="t" hint-placeholder-count="3">
+        <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">{{ t.label }}</span>
+      </sc-for>
+    </div>
+    <a href="{{ href }}" onClick="{{ onNav }}" onMouseEnter="{{ ctaEnter }}" onTouchStart="{{ ctaPress }}" onMouseLeave="{{ ctaLeave }}" data-cursor-view="1" style="{{ ctaStyleSide }}"><span style="{{ ctaFill }}"></span><span style="position:relative">View case study</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="{{ ctaArrowStyle }}"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1200,&quot;height&quot;:620},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Earnix&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;role&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Product Designer&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;desc&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tags&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;string[]&quot;},&quot;img&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/earnix-last.png&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;video&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;href&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;screen&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;screenRatio&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;screenClip&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;cols&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12,&quot;tsType&quot;:&quot;number&quot;},&quot;gridGap&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:24,&quot;tsType&quot;:&quot;number&quot;},&quot;onNav&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;(e: MouseEvent) =&gt; void&quot;}}">class Component extends DCLogic {
+  state = { on: false, vidOn: false, w: 1200 };
+  rootRef = React.createRef();
+  vidRef = React.createRef();
+  componentDidMount() {
+    this.measure = () => { const el = this.rootRef.current; if (el) this.setState({ w: el.getBoundingClientRect().width || 1200, pr: window.innerHeight >= window.innerWidth }); };
+    window.addEventListener("resize", this.measure);
+    this.measure();
+    if ("ResizeObserver" in window) { this.ro = new ResizeObserver(this.measure); const el = this.rootRef.current; if (el) this.ro.observe(el); }
+  }
+  componentWillUnmount() { if (this.ro) this.ro.disconnect(); window.removeEventListener("resize", this.measure); }
+  renderVals() {
+    const on = this.state.on, cta = !!this.state.cta, narrow = this.state.w < 820, tight = false, img = this.props.screen ? "" : (this.props.img || "");
+    const reduce = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const pad = !narrow && tight ? 20 : 24;
+    return {
+      gapL: narrow ? "20px" : "24px",
+      stacked: narrow,
+      sideBy: !narrow,
+      href: this.props.href || "#",
+      onNav: this.props.onNav,
+      title: this.props.title || "",
+      role: this.props.role || "Product Designer",
+      desc: this.props.desc || "",
+      tags: (this.props.tags || []).map(t => ({ label: t })),
+      hasScreen: !!this.props.screen,
+      screen: this.props.screen || "",
+      screenStyle: "display:block;max-width:100%;max-height:100%;width:auto;height:auto;" + (this.props.screenClip ? "clip-path:" + this.props.screenClip + ";" : ""),
+      hasVideo: !!this.props.video && !reduce && !this.props.screen,
+      video: this.props.video || "",
+      rootRef: this.rootRef,
+      vidRef: this.vidRef,
+      enter: () => { if (window.matchMedia("(hover: none)").matches) return; this.setState({ on: true }); },
+      leave: () => this.setState({ on: false, cta: false }),
+      ctaEnter: () => { if (window.matchMedia("(hover: none)").matches) return; this.setState({ cta: true }); },
+      ctaLeave: () => this.setState({ cta: false }),
+      ctaPress: () => { this.setState({ cta: true }); clearTimeout(this._prc); this._prc = setTimeout(() => this.setState({ cta: false }), 700); },
+      onPlaying: () => { if (!this.state.vidOn) this.setState({ vidOn: true }); },
+      frameStyle: "position:relative;top:" + (on && !reduce ? -6 : 0) + "px;display:grid;grid-template-columns:" + (narrow ? "minmax(0,1fr)" : tight ? "minmax(0,1fr) minmax(0,1fr)" : "minmax(0,3fr) minmax(0,2fr)") + ";gap:" + (narrow ? "24px" : "clamp(32px,3vw,64px)") + ";align-items:center;color:#11131A;cursor:default;padding:" + pad + "px;border-radius:clamp(18px,2.4vw,34px);background:#F7F8FA;box-shadow:" + (on && !reduce ? "0 20px 48px -24px rgba(17,19,26,.08)" : "0 0 0 rgba(17,19,26,0)") + ";transition:top 280ms cubic-bezier(0.22,1,0.36,1),box-shadow 280ms cubic-bezier(0.22,1,0.36,1)",
+      imgWrapStyle: "position:relative;isolation:isolate;border-radius:clamp(10px,1.2vw,18px);aspect-ratio:" + (this.props.screen ? (this.props.screenRatio || "1987/1147") : "16/10") + ";" + (this.props.screen ? "overflow:visible;background:transparent" : "overflow:hidden;background:#EBEDF1"),
+      mediaStyle: "position:absolute;inset:0;background-position:center;background-repeat:no-repeat;" + (this.props.screen ? "display:none;" : img ? "background-image:url('" + img + "');background-size:cover;" : ""),
+      videoStyle: "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:" + (this.state.vidOn ? 1 : 0) + ";transition:opacity 300ms ease;pointer-events:none",
+      ctaStyle: "position:relative;overflow:hidden;isolation:isolate;grid-area:cta;align-self:center;justify-self:end;margin-top:12px;display:inline-flex;align-items:center;gap:10px;height:40px;box-sizing:border-box;padding:9px 13px 9px 19px;border:1px solid " + (cta ? "#1818EA" : "#11131A") + ";border-radius:50px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;cursor:pointer;text-decoration:none;background:#11131A;color:#ffffff;transition:border-color " + (cta ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
+      ctaStyleSide: "position:relative;overflow:hidden;isolation:isolate;margin-top:4px;display:inline-flex;align-items:center;gap:10px;height:40px;box-sizing:border-box;padding:9px 13px 9px 19px;border:1px solid " + (cta ? "#1818EA" : "#11131A") + ";border-radius:50px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;cursor:pointer;text-decoration:none;background:#11131A;color:#ffffff;transition:border-color " + (cta ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
+      ctaFill: "position:absolute;left:0;bottom:0;width:260%;aspect-ratio:1;border-radius:50%;background:#1818EA;z-index:0;pointer-events:none;will-change:transform;transform:translate(-50%,50%) scale(" + (cta ? 1 : 0) + ");transition:transform " + (cta ? "520ms cubic-bezier(0.25,1,0.5,1)" : "400ms cubic-bezier(0.5,0,0.25,1)"),
+      ctaArrowStyle: "position:relative;flex:none;width:18px;height:18px;display:block;transition:transform 380ms cubic-bezier(0.22,1,0.36,1);transform:translate(" + (cta && !reduce ? "2px,-2px" : "0,0") + ")"
+    };
+  }
+}</script>
+</body>
+</html>

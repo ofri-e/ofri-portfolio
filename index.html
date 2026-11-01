@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ofri Even — Product Designer</title>
+<meta name="description" content="Ofri Even is a product designer with a cybersecurity background, making complex products clear and bringing them to life with branding and motion.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ofri Even — Product Designer">
+<meta property="og:description" content="Product design, branding and motion. Selected work: Earnix, Pyrite, The Beatles 2030 and more.">
+<meta property="og:image" content="https://ofrieven.com/assets/earnix-last.png">
+<meta property="og:url" content="https://ofrieven.com/">
+<link rel="canonical" href="https://ofrieven.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ofrieven.com/assets/earnix-last.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>html, body { margin: 0; padding: 0; background: #ffffff; }</style>
+</helmet>
+<sc-if value="{{ isDesk }}" hint-placeholder-val="{{ false }}">
+  <dc-import name="Ofri Even Portfolio v6" hint-size="100%,100vh"></dc-import>
+</sc-if>
+<sc-if value="{{ isTab }}" hint-placeholder-val="{{ false }}">
+  <dc-import name="Ofri Even Portfolio v7 tablet" hint-size="100%,100vh"></dc-import>
+</sc-if>
+<sc-if value="{{ isMob }}" hint-placeholder-val="{{ false }}">
+  <dc-import name="Ofri Even Portfolio v7 mobile-only" hint-size="100%,100vh"></dc-import>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { vw: typeof window !== "undefined" ? window.innerWidth : 1440 };
+  componentDidMount() {
+    const tier = (w) => w < 768 ? 0 : w < 1200 ? 1 : 2;
+    this.onR = () => { if (tier(window.innerWidth) !== tier(this.state.vw)) this.setState({ vw: window.innerWidth }); };
+    window.addEventListener("resize", this.onR);
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onR); }
+  renderVals() {
+    const w = this.state.vw;
+    return { isMob: w < 768, isTab: w >= 768 && w < 1200, isDesk: w >= 1200 };
+  }
+}
+</script>
+</body>
+</html>
