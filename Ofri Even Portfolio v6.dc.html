@@ -2090,7 +2090,7 @@ class Component extends DCLogic {
       this.introT.push(setTimeout(() => this.setState({ loaded: true }), 120 + 560 + 760));
     }
     this.measureHero(); requestAnimationFrame(this.measureHero);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this.measureHero);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(this.measureHero); if (document.fonts && document.fonts.load) { document.fonts.load('300 100px "Funnel Sans"').then(this.measureHero, () => {}); setTimeout(this.measureHero, 800); setTimeout(this.measureHero, 2000); if (document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", this.measureHero); }
     window.addEventListener("resize", this.measureHero, { passive: true });
     const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     { const hv = this.clipRefs[0].current; if (hv) { hv.addEventListener("playing", () => { this._hPlayed = true; clearTimeout(this._hfbT); }, { once: true }); this._hfbT = setTimeout(() => { if (!this._hPlayed) this.heroFallback(); }, 2000); } }
