@@ -8,13 +8,13 @@
 <body>
 <x-dc>
 <helmet>
-<title>Ofri Even — Product Designer</title>
+<title>Ofri Even</title>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#1818EA"></rect><text x="50" y="62" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="34" font-weight="500" fill="#ffffff">OE</text></svg></template>
 <meta name="description" content="Ofri Even is a product designer with a cybersecurity background, making complex products clear and bringing them to life with branding and motion.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ofri Even — Product Designer">
+<meta property="og:title" content="Ofri Even">
 <meta property="og:description" content="Product design, branding and motion. Selected work: Earnix, Pyrite, The Beatles 2030 and more.">
-<meta property="og:image" content="assets/earnix-last.png">
+<meta property="og:image" content="https://ofrieven.com/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -22,11 +22,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&amp;family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet">
 <style>
+.t-display { font-family: 'Funnel Sans',sans-serif; font-size: clamp(48px,14.5vw,272px); font-weight: 300; line-height: 1; letter-spacing: -0.065em; }
+.t-h1 { font-family: 'Funnel Sans',sans-serif; font-size: clamp(44px,7vw,104px); font-weight: 500; line-height: 1.1; letter-spacing: -0.035em; }
+.t-h1-caps { text-transform: uppercase; letter-spacing: -0.03em; }
+.t-h2 { font-family: 'Funnel Sans',sans-serif; font-size: clamp(24px,calc(1.6vw + 14px),36px); font-weight: 500; line-height: 1.25; letter-spacing: -0.01em; }
+.t-h4 { font-family: 'Funnel Sans',sans-serif; font-size: clamp(18px,calc(0.2vw + 16px),20px); font-weight: 500; line-height: 1.3; letter-spacing: -0.02em; }
+.t-lead { font-family: 'Funnel Sans',sans-serif; font-size: clamp(20px,calc(0.6vw + 16px),28px); font-weight: 400; line-height: 1.45; letter-spacing: -0.02em; }
+.t-nav { font-family: 'Funnel Sans',sans-serif; font-size: clamp(18px,calc(0.4vw + 15px),22px); font-weight: 400; line-height: 1.5; letter-spacing: -0.01em; }
+.t-menu { font-family: 'Funnel Sans',sans-serif; font-size: clamp(36px,11vw,56px); font-weight: 400; line-height: 1.1; letter-spacing: -0.03em; }
+.t-body-lg { font-family: Figtree,sans-serif; font-size: clamp(16px,calc(0.15vw + 15px),18px); font-weight: 400; line-height: 1.6; }
+.t-body { font-family: Figtree,sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; }
+.t-body-sm { font-family: Figtree,sans-serif; font-size: 14px; font-weight: 400; line-height: 20px; }
+.t-medium { font-weight: 500; }
+.t-body-strong { font-family: Figtree,sans-serif; font-size: 16px; font-weight: 500; line-height: 24px; }
+.t-label { font-family: Figtree,sans-serif; font-size: 14px; font-weight: 500; line-height: 20px; letter-spacing: 0.03em; text-transform: uppercase; }
+.t-button { font-family: Figtree,sans-serif; font-size: 12px; font-weight: 700; line-height: 1.2; letter-spacing: 0.04em; text-transform: uppercase; }
+.t-caption { font-family: Figtree,sans-serif; font-size: 12px; font-weight: 500; line-height: 1.5; }
+
+:root { --surface: #F4F7FD; --surface-2: #E8EDF8; --line: #DEE5F2; --text-3: #A2ABBE; --text-2: #61697B; --ink: #161A25; --ink-rgb: 22,26,37; --white: #FFFFFF; --blue: #1818EA; --orange: #FF810A; }
+
 html, body { margin: 0; padding: 0; background: #ffffff; }
 * { box-sizing: border-box; }
 a { color: inherit; text-decoration: none; }
 a:hover { color: inherit; }
-::selection { background: #11131A; color: #ffffff; }
+::selection { background: var(--ink); color: #ffffff; }
 :focus-visible { outline: 2px solid #1818EA; outline-offset: 3px; border-radius: 4px; }
 img { display: block; }
 html.om-nocursor:has([data-om-cursor]), html.om-nocursor:has([data-om-cursor]) body, html.om-nocursor:has([data-om-cursor]) a, html.om-nocursor:has([data-om-cursor]) button,
@@ -48,8 +67,22 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 @keyframes om-curtain { 0%, 83% { opacity: 1; } 100% { opacity: 0; } }
 </style>
 <script src="./image-slot.js"></script>
+@keyframes glowA { 0% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-50px) scale(1.12); } 100% { transform: translate(-20px,40px) scale(.94); } }
+@keyframes glowB { 0% { transform: translate(0,0) scale(1.05); } 50% { transform: translate(-45px,35px) scale(.92); } 100% { transform: translate(25px,-45px) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) { [data-glow] { animation: none !important; } }
 </helmet>
-<div style="background:#ffffff;color:#11131A;font-family:Figtree,system-ui,sans-serif;overflow-x:hidden">
+<div ref="{{ glowRootRef }}" style="background:#ffffff;color:var(--ink);font-family:Figtree,system-ui,sans-serif;overflow-x:hidden;position:relative;isolation:isolate">
+<div aria-hidden="true" style="{{ glowLayer }}">
+  <div style="{{ glowInner }}">
+    <div data-glow="1" style="position:absolute;left:calc(-3% - 29.85vw);top:calc(12% - 39.95vw);width:59.7vw;height:79.9vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #C5D0E8, transparent);animation:glowA 20s ease-in-out 0s infinite alternate"></div>
+    <div data-glow="1" style="position:absolute;left:calc(89% - 35.85vw);top:calc(38% - 23.95vw);width:71.7vw;height:47.9vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #C5D0E8, transparent);animation:glowB 23s ease-in-out -3s infinite alternate"></div>
+    <div data-glow="1" style="position:absolute;left:calc(40% - 21.55vw);top:calc(22% - 12.65vw);width:43.1vw;height:25.3vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #EED4C5, transparent);animation:glowA 26s ease-in-out -6s infinite alternate"></div>
+    <div data-glow="1" style="position:absolute;left:calc(-5% - 29.85vw);top:calc(54% - 43.9vw);width:59.7vw;height:87.8vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #EED4C5, transparent);animation:glowB 21s ease-in-out -9s infinite alternate"></div>
+    <div data-glow="1" style="position:absolute;left:calc(18% - 38.9vw);top:calc(89% - 20.4vw);width:77.8vw;height:40.8vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #C5D0E8, transparent);animation:glowA 24s ease-in-out -12s infinite alternate"></div>
+    <div data-glow="1" style="position:absolute;left:calc(104% - 28.45vw);top:calc(71% - 38.2vw);width:56.9vw;height:76.4vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #EED4C5, transparent);animation:glowB 27s ease-in-out -15s infinite alternate"></div>
+    <div data-glow="1" style="position:absolute;left:calc(95% - 20.85vw);top:calc(8% - 30.2vw);width:41.7vw;height:60.4vw;border-radius:50%;opacity:0.45;background:radial-gradient(closest-side, #EED4C5, transparent);animation:glowA 22s ease-in-out -18s infinite alternate"></div>
+  </div>
+</div>
 
 <sc-if value="{{ showLoader }}" hint-placeholder-val="{{ true }}">
 <div style="position:fixed;inset:0;z-index:200;pointer-events:none;overflow:hidden">
@@ -67,12 +100,12 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
     </sc-for>
   </div>
 </sc-if>
-<div data-site-header="1" style="position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;padding:20px {{ L.padX }};background:#ffffff;font-family:'Funnel Sans',sans-serif;font-weight:400;font-size:clamp(18px,calc(0.4vw + 15px),22px);line-height:1.5;letter-spacing:-0.01em;color:#11131A">
-  <a href="#top" onClick="{{ goHome }}" onMouseEnter="{{ brandEnter }}" onMouseLeave="{{ brandLeave }}" aria-label="Ofri Even, home" style="position:relative;justify-self:start;display:flex;align-items:center;gap:0;color:#11131A;white-space:nowrap" style-before="content:'';position:absolute;inset:-12px -8px"><span ref="{{ markRef }}" style="{{ markStyle }}"></span><span style="margin-left:-6px;display:block;height:1.5em;overflow:hidden"><span style="{{ brandInner }}"><span style="display:block;height:1.5em">Ofri Even</span><span aria-hidden="true" style="display:block;height:1.5em">Ofri Even</span></span></span></a>
+<div data-site-header="1" class="t-nav" style="position:fixed;top:0;left:0;right:0;z-index:60;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;padding:20px {{ L.padX }};background:{{ headerBg }};transition:background-color 200ms ease;color:var(--ink)">
+  <a href="#top" onClick="{{ goHome }}" onMouseEnter="{{ brandEnter }}" onMouseLeave="{{ brandLeave }}" aria-label="Ofri Even, home" style="position:relative;justify-self:start;display:flex;align-items:center;gap:0;color:var(--ink);white-space:nowrap" style-before="content:'';position:absolute;inset:-12px -8px"><span ref="{{ markRef }}" style="{{ markStyle }}"></span><span style="margin-left:-6px;display:block;height:1.5em;overflow:hidden"><span style="{{ brandInner }}"><span style="display:block;height:1.5em">Ofri Even</span><span aria-hidden="true" style="display:block;height:1.5em">Ofri Even</span></span></span></a>
   <sc-if value="{{ wideNav }}" hint-placeholder-val="{{ true }}">
     <nav style="display:flex;align-items:center;gap:32px">
       <sc-for list="{{ navLinks }}" as="n" hint-placeholder-count="2">
-        <a href="{{ n.href }}" onClick="{{ n.go }}" onMouseEnter="{{ n.enter }}" onMouseLeave="{{ n.leave }}" style="display:flex;align-items:flex-start;height:1.5em;overflow:hidden;color:#11131A">
+        <a href="{{ n.href }}" onClick="{{ n.go }}" onMouseEnter="{{ n.enter }}" onMouseLeave="{{ n.leave }}" style="display:flex;align-items:flex-start;height:1.5em;overflow:hidden;color:var(--ink)">
           <span style="{{ n.innerStyle }}">
             <span style="display:flex;align-items:flex-start;height:1.5em">{{ n.label }}<sup style="{{ n.supStyle }}">{{ n.count }}</sup></span>
             <span style="display:flex;align-items:flex-start;height:1.5em">{{ n.label }}<sup style="{{ n.supStyle }}">{{ n.count }}</sup></span>
@@ -80,13 +113,13 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
         </a>
       </sc-for>
     </nav>
-    <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener" style="justify-self:end;color:#11131A;white-space:nowrap;transition:color 250ms ease" style-hover="color:#1818EA">Get in touch</a>
+    <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener" style="justify-self:end;color:var(--ink);white-space:nowrap;transition:color 250ms ease" style-hover="color:#1818EA">Get in touch</a>
   </sc-if>
   <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
     <span></span>
     <button type="button" onClick="{{ toggleMenu }}" aria-label="Menu" style="justify-self:end;display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0;background:none;border:0;cursor:pointer">
-      <span style="display:block;width:24px;height:1.5px;background:#11131A;margin:0 auto"></span>
-      <span style="display:block;width:24px;height:1.5px;background:#11131A;margin:0 auto"></span>
+      <span style="display:block;width:24px;height:1.5px;background:var(--ink);margin:0 auto"></span>
+      <span style="display:block;width:24px;height:1.5px;background:var(--ink);margin:0 auto"></span>
     </button>
   </sc-if>
 </div>
@@ -94,13 +127,13 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
   <div style="position:fixed;inset:0;z-index:70;background:#ffffff;display:flex;flex-direction:column;padding:18px {{ L.padX }} 40px">
     <div style="display:flex;align-items:center;justify-content:flex-end;height:44px">
-      <button type="button" onClick="{{ closeMenu }}" aria-label="Close" style="width:44px;height:44px;padding:0;background:none;border:0;font-family:Figtree,sans-serif;font-size:24px;color:#11131A;cursor:pointer">×</button>
+      <button type="button" onClick="{{ closeMenu }}" aria-label="Close" style="width:44px;height:44px;padding:0;background:none;border:0;font-family:Figtree,sans-serif;font-size:24px;color:var(--ink);cursor:pointer">×</button>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:32px;font-family:'Funnel Sans',sans-serif;font-weight:400;letter-spacing:-0.03em">
-      <a href="#projects" onClick="{{ goProjectsM }}" style="font-size:{{ T.menuF }};line-height:{{ T.menuL }};color:#11131A">Work</a>
-      <a href="#about" onClick="{{ goAboutM }}" style="font-size:{{ T.menuF }};line-height:{{ T.menuL }};color:#11131A">About</a>
+      <a href="#projects" onClick="{{ goProjectsM }}" class="t-menu" style="color:var(--ink)">Work</a>
+      <a href="#about" onClick="{{ goAboutM }}" class="t-menu" style="color:var(--ink)">About</a>
     </div>
-    <div style="display:flex;flex-direction:column;gap:8px;margin-top:auto;font-family:Figtree,sans-serif;font-size:16px;color:#11131A">
+    <div class="t-body" style="display:flex;flex-direction:column;gap:8px;margin-top:auto;color:var(--ink)">
       <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener">ylb.ofri.even@gmail.com</a>
       <a href="https://www.instagram.com/ofri.e.design/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.linkedin.com/in/ofri-even-b74418321/" target="_blank" rel="noopener">LinkedIn</a>
@@ -111,27 +144,28 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 <div data-page-wrap="1" style="{{ homeWrap }}">
 <div>
   <section id="top" style="box-sizing:border-box;padding:clamp(96px,11vw,160px) {{ L.padX }} clamp(40px,5vw,64px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(24px,3.2vw,40px)">
-    <h1 aria-label="Ofri Even" onMouseMove="{{ heroMove }}" onMouseLeave="{{ heroLeave }}" onTouchStart="{{ heroTouch }}" onTouchMove="{{ heroTouch }}" onTouchEnd="{{ heroLeave }}" onTouchCancel="{{ heroLeave }}" style="touch-action:pan-y;display:flex;align-items:center;justify-content:center;gap:0.07em;margin:0;font-family:'Funnel Sans',sans-serif;font-weight:300;font-size:clamp(48px,14.5vw,272px);line-height:1;letter-spacing:-0.065em;color:#11131A;white-space:nowrap;overflow:hidden;padding-bottom:calc(0.06em + 40px);margin-bottom:-40px;text-wrap:balance">
+    <h1 aria-label="Ofri Even" onMouseMove="{{ heroMove }}" onMouseLeave="{{ heroLeave }}" onTouchStart="{{ heroTouch }}" onTouchMove="{{ heroTouch }}" onTouchEnd="{{ heroLeave }}" onTouchCancel="{{ heroLeave }}" class="t-display" style="touch-action:pan-y;display:flex;align-items:center;justify-content:center;gap:0.07em;margin:0;color:var(--ink);white-space:nowrap;overflow:hidden;padding-bottom:calc(0.06em + 40px);margin-bottom:-40px;text-wrap:balance">
       <span style="{{ heroBoxA }}"><span style="{{ heroWordA }}"><span ref="{{ heroARef }}" style="{{ heroStretchA }}">Ofri</span></span></span>
       <span style="{{ heroFrame }}">
         <sc-for list="{{ heroClips }}" as="c" hint-placeholder-count="0">
-          <video data-clip="1" poster="assets/hero-poster.jpg" data-hsrc="{{ c.hsrc }}" ref="{{ c.ref }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="{{ c.preload }}" aria-hidden="true" style="{{ c.style }}"></video>
+          <video data-clip="1" data-hsrc="{{ c.hsrc }}" ref="{{ c.ref }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="{{ c.preload }}" poster="assets/hero-first-frame.jpg" aria-hidden="true" style="{{ c.style }}"></video>
         </sc-for>
+        <img ref="{{ heroFbRef }}" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0;z-index:3;pointer-events:none">
       </span>
       <span style="{{ heroBoxB }}"><span style="{{ heroWordB }}"><span ref="{{ heroBRef }}" style="{{ heroStretchB }}">Even</span></span></span>
     </h1>
     <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(16px,1.6vw,32px);text-align:center;max-width:min(100%,22em);font-size:clamp(28px,4.2vw,60px)">
-      <p style="margin:0;overflow:hidden;padding:0.04em 0 0.16em;font-family:'Funnel Sans',sans-serif;font-weight:400;font-size:1em;line-height:1.2;letter-spacing:-0.03em;color:#11131A;text-wrap:balance"><span aria-label="Hi, I&#39;m Ofri, a product designer with a cybersecurity background. I make complex products clear, and bring them to life with branding and motion." style="display:block;text-wrap:balance"><sc-for list="{{ typeChars }}" as="ch" hint-placeholder-count="0"><sc-if value="{{ ch.isChar }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="{{ ch.style }}">{{ ch.c }}</span></sc-if><sc-if value="{{ ch.isIcon }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="{{ ch.style }}"><sc-if value="{{ ch.curl }}" hint-placeholder-val="{{ false }}"><svg viewBox="-1 -1 23 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" style="width:100%;height:100%;display:block;overflow:visible"><path pathLength="1" style="{{ ch.curlPath }};text-wrap:pretty" d="M19.8836 0.860596C19.8836 4.22544 18.2032 7.67957 14.6882 9.57508C11.6115 11.2677 7.23604 11.6248 3.90367 10.3057C1.72809 9.49796 0.262824 7.49286 1.65909 5.75159C3.35572 3.68154 7.25633 3.21477 10.0895 3.58819C15.8653 4.30661 20.0257 8.47512 19.494 13.2159C19.4574 16.3656 17.777 19.8563 14.5908 21.3906C11.368 23.0385 6.82609 23.3795 3.48966 21.8411C2.28822 21.2769 1.32626 20.384 1.14767 19.3449C0.863542 15.4402 7.71905 14.6081 11.2422 15.4524C19.5873 17.0272 22.2581 26.6793 16.7258 31.7083C13.7465 34.6023 7.95852 35.4263 3.91179 33.7946C-3.15072 30.8722 3.59925 26.7971 8.60389 27.0325C21.0851 27.0122 23.8045 42.6674 12.0256 45.8983C8.88802 46.7466 4.9184 46.6005 2.46275 44.6279C1.30191 43.7877 0.526653 42.1641 1.22884 41.1859C3.20148 37.8048 15.4919 37.472 18.6132 44.1895C19.3113 45.6385 20.1515 48.6502 19.36 51.3616C18.5685 54.073 16.121 56.3257 12.3503 57.3607C9.21273 58.209 5.24311 58.0629 2.78747 56.0902C1.62662 55.25 0.851365 53.6265 1.55356 52.6483C3.52619 49.2672 15.8166 48.9344 18.9379 55.6519C19.636 57.1009 19.839 58.6879 19.8471 60.1938"></path></svg></sc-if><sc-if value="{{ ch.pen }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg></sc-if><sc-if value="{{ ch.lock }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M7 10.5V7.5a5 5 0 0 1 10 0v3" style="{{ ch.shackle }};text-wrap:pretty"></path><rect x="4" y="10.5" width="16" height="11" rx="2.5"></rect><path d="M12 15v2.5"></path></svg></sc-if><sc-if value="{{ ch.spark }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path><path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path><path d="M2 12a10 10 0 0 1 18-6"></path><path d="M2 16h.01"></path><path d="M21.8 16c.2-2 .131-5.354 0-6"></path><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path><path d="M8.65 22c.21-.66.45-1.32.57-2"></path><path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path></svg></sc-if><sc-if value="{{ ch.play }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M4.5 3.5h15l-5.5 8.5 5.5 8.5h-15l5.5-8.5z"></path><path d="M12 3.5h7.5l-5.5 8.5 5.5 8.5H12z" fill="currentColor" stroke="none"></path></svg></sc-if></span></sc-if></sc-for></span></p>
+      <p style="margin:0;overflow:hidden;padding:0.04em 0 0.16em;font-family:'Funnel Sans',sans-serif;font-weight:400;font-size:1em;line-height:1.2;letter-spacing:-0.03em;color:var(--ink);text-wrap:balance"><span aria-label="Hi, I&#39;m Ofri, a product designer with a cybersecurity background. I make complex products clear, and bring them to life with branding and motion." style="display:block;text-wrap:balance"><sc-for list="{{ typeChars }}" as="ch" hint-placeholder-count="0"><sc-if value="{{ ch.isChar }}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="{{ ch.style }}">{{ ch.c }}</span></sc-if><sc-if value="{{ ch.isIcon }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="{{ ch.style }}"><sc-if value="{{ ch.curl }}" hint-placeholder-val="{{ false }}"><svg viewBox="-1 -1 23 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" style="width:100%;height:100%;display:block;overflow:visible"><path pathLength="1" style="{{ ch.curlPath }};text-wrap:pretty" d="M19.8836 0.860596C19.8836 4.22544 18.2032 7.67957 14.6882 9.57508C11.6115 11.2677 7.23604 11.6248 3.90367 10.3057C1.72809 9.49796 0.262824 7.49286 1.65909 5.75159C3.35572 3.68154 7.25633 3.21477 10.0895 3.58819C15.8653 4.30661 20.0257 8.47512 19.494 13.2159C19.4574 16.3656 17.777 19.8563 14.5908 21.3906C11.368 23.0385 6.82609 23.3795 3.48966 21.8411C2.28822 21.2769 1.32626 20.384 1.14767 19.3449C0.863542 15.4402 7.71905 14.6081 11.2422 15.4524C19.5873 17.0272 22.2581 26.6793 16.7258 31.7083C13.7465 34.6023 7.95852 35.4263 3.91179 33.7946C-3.15072 30.8722 3.59925 26.7971 8.60389 27.0325C21.0851 27.0122 23.8045 42.6674 12.0256 45.8983C8.88802 46.7466 4.9184 46.6005 2.46275 44.6279C1.30191 43.7877 0.526653 42.1641 1.22884 41.1859C3.20148 37.8048 15.4919 37.472 18.6132 44.1895C19.3113 45.6385 20.1515 48.6502 19.36 51.3616C18.5685 54.073 16.121 56.3257 12.3503 57.3607C9.21273 58.209 5.24311 58.0629 2.78747 56.0902C1.62662 55.25 0.851365 53.6265 1.55356 52.6483C3.52619 49.2672 15.8166 48.9344 18.9379 55.6519C19.636 57.1009 19.839 58.6879 19.8471 60.1938"></path></svg></sc-if><sc-if value="{{ ch.pen }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg></sc-if><sc-if value="{{ ch.lock }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M7 10.5V7.5a5 5 0 0 1 10 0v3" style="{{ ch.shackle }};text-wrap:pretty"></path><rect x="4" y="10.5" width="16" height="11" rx="2.5"></rect><path d="M12 15v2.5"></path></svg></sc-if><sc-if value="{{ ch.spark }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4"></path><path d="M14 13.12c0 2.38 0 6.38-1 8.88"></path><path d="M17.29 21.02c.12-.6.43-2.3.5-3.02"></path><path d="M2 12a10 10 0 0 1 18-6"></path><path d="M2 16h.01"></path><path d="M21.8 16c.2-2 .131-5.354 0-6"></path><path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2"></path><path d="M8.65 22c.21-.66.45-1.32.57-2"></path><path d="M9 6.8a6 6 0 0 1 9 5.2v2"></path></svg></sc-if><sc-if value="{{ ch.play }}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:100%;height:100%;display:block;overflow:visible"><path d="M4.5 3.5h15l-5.5 8.5 5.5 8.5h-15l5.5-8.5z"></path><path d="M12 3.5h7.5l-5.5 8.5 5.5 8.5H12z" fill="currentColor" stroke="none"></path></svg></sc-if></span></sc-if></sc-for></span></p>
     </div>
     <div style="{{ heroCtaWrap }}">
-      <a href="#work" onClick="{{ scrollToWork }}" onMouseEnter="{{ heroCtaIn }}" onTouchStart="{{ heroCtaPress }}" onMouseLeave="{{ heroCtaOut }}" onFocus="{{ heroCtaFocus }}" onBlur="{{ heroCtaOut }}" style="{{ heroCtaStyle }}"><span aria-hidden="true" style="{{ heroCtaFill }}"></span><span style="position:relative">View projects</span><span style="{{ heroCtaArrow }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;transform:translateY(-0.8715px)"><path d="M7 7l10 10"></path><path d="M17 8v9H8"></path></svg></span></a>
+      <a href="#work" onClick="{{ scrollToWork }}" onMouseEnter="{{ heroCtaIn }}" onTouchStart="{{ heroCtaPress }}" onMouseLeave="{{ heroCtaOut }}" onFocus="{{ heroCtaFocus }}" onBlur="{{ heroCtaOut }}" class="t-button" style="{{ heroCtaStyle }}"><span aria-hidden="true" style="{{ heroCtaFill }}"></span><span style="position:relative">View projects</span><span style="{{ heroCtaArrow }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;transform:translateY(-0.8715px)"><path d="M7 7l10 10"></path><path d="M17 8v9H8"></path></svg></span></a>
     </div>
   
   </section>
   <div style="{{ contentInStyle }}">
   <section id="work" style="padding:{{ L.secYS }} {{ L.padX }} {{ L.secY }};max-width:none;margin:0 auto">
     <div style="display:flex;align-items:baseline;justify-content:flex-end;margin:0 0 {{ S.s3 }}">
-      <a href="#projects" onClick="{{ goProjects }}" style="position:relative;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;color:#11131A;text-decoration:none;white-space:nowrap;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease" style-hover="color:#646873;background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">View all projects<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+      <a href="#projects" onClick="{{ goProjects }}" class="t-button" style="position:relative;color:var(--ink);text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease" style-hover="color:var(--text-2);background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">View all projects<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
     </div>
     <div id="featured" style="display:flex;flex-direction:column;gap:{{ L.secY }}">
       <sc-for list="{{ featured }}" as="p" hint-placeholder-count="3">
@@ -146,16 +180,16 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
   <section id="about" style="padding:0 {{ L.padX }} {{ L.secY }}">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:{{ L.secYS }} {{ L.gap }};align-items:start">
       <div style="display:flex;flex-direction:column;justify-content:flex-start;gap:40px">
-        <div ref="{{ aboutTextRef }}" style="display:flex;flex-direction:column;gap:1em;max-width:34em;font-family:'Funnel Sans',sans-serif;font-weight:400;font-size:clamp(20px,calc(0.6vw + 16px),28px);line-height:1.45;letter-spacing:-0.02em;color:#11131A">
+        <div ref="{{ aboutTextRef }}" class="t-lead" style="display:flex;flex-direction:column;gap:1em;max-width:34em;color:var(--ink)">
           <p style="margin:0;text-wrap:pretty">At Earnix I design enterprise SaaS, which mostly means taking dense, data-heavy workflows and making them feel calm.</p>
           <p style="margin:0;text-wrap:pretty">I started out in cybersecurity at ZIM, so I still ask “but what if…” more than most. Then Shenkar got me hooked on branding, type and motion, and I never really picked just one.</p>
           <p style="margin:0;text-wrap:pretty">I think in systems, start with research, and save some love for the micro-interactions.</p>
         </div>
-        <a href="#about" onClick="{{ goAbout }}" style="position:relative;align-self:flex-start;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;color:#11131A;text-decoration:none;white-space:nowrap;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease" style-hover="color:#646873;background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">More about me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+        <a href="#about" onClick="{{ goAbout }}" class="t-button" style="position:relative;align-self:flex-start;color:var(--ink);text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease" style-hover="color:var(--text-2);background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">More about me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
       </div>
       <div ref="{{ pillBoxRef }}" style="justify-self:end;max-width:100%;position:relative;overflow:visible;clip-path:inset(-80px -60px -8px -60px);height:320px;border-radius:0;background:transparent;user-select:none;-webkit-user-select:none">
         <sc-for list="{{ aboutPills }}" as="pl" hint-placeholder-count="0">
-          <span ref="{{ pl.ref }}" style="{{ pl.style }}">{{ pl.label }}</span>
+          <span ref="{{ pl.ref }}" class="t-nav" style="{{ pl.style }}">{{ pl.label }}</span>
         </sc-for>
       </div>
     </div>
@@ -169,7 +203,7 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 <div style="padding-top:64px">
   <section style="padding:{{ L.secY }} {{ L.padX }} 0;max-width:none;margin:0 auto">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 0 {{ S.s9 }}">
-      <h1 style="font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h1F }};line-height:{{ T.h1L }};letter-spacing:-0.035em;color:#11131A;margin:0;text-wrap:balance">About</h1>
+      <h1 class="t-h1" style="color:var(--ink);margin:0;text-wrap:balance">About</h1>
     </div>
   </section>
 
@@ -177,32 +211,32 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
     <div>
       <div style="display:grid;grid-template-columns:{{ G.major }};gap:{{ L.secYS }} {{ L.gap }};align-items:start">
         <div>
-          <div style="display:flex;flex-direction:column;gap:1em;max-width:34em;font-family:'Funnel Sans',sans-serif;font-weight:400;font-size:clamp(20px,calc(0.6vw + 16px),28px);line-height:1.45;letter-spacing:-0.02em;color:#11131A"><p style="margin:0;text-wrap:pretty;hyphens:none">Hi! I'm Ofri :)</p><p style="margin:0;text-wrap:pretty;hyphens:none">Product designer with experience designing enterprise SaaS products at Earnix and a background in cybersecurity at ZIM.</p><p style="margin:0;text-wrap:pretty;hyphens:none">With a multidisciplinary background in visual communication, branding, and motion design, I combine systems thinking with attention to detail to create cohesive product experiences, from core workflows to micro-interactions. A&nbsp;Shenkar graduate with academic honors.</p></div>
-          <div style="margin:40px 0 0"><a href="https://drive.google.com/file/d/1qD5mEyvFs1UCy_-uA3gH0NCAPcRYBEB9/view?usp=sharing" target="_blank" rel="noopener" onMouseEnter="{{ cvIn }}" onTouchStart="{{ cvPress }}" onMouseLeave="{{ cvOut }}" style="{{ cvStyle }}"><span aria-hidden="true" style="{{ cvFill }}"></span><span style="position:relative">View my CV</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="{{ cvArrow }}"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
+          <div class="t-lead" style="display:flex;flex-direction:column;gap:1em;max-width:34em;color:var(--ink)"><p style="margin:0;text-wrap:pretty;hyphens:none">Hi! I'm Ofri :)</p><p style="margin:0;text-wrap:pretty;hyphens:none">Product designer with experience designing enterprise SaaS products at Earnix and a background in cybersecurity at ZIM.</p><p style="margin:0;text-wrap:pretty;hyphens:none">With a multidisciplinary background in visual communication, branding, and motion design, I combine systems thinking with attention to detail to create cohesive product experiences, from core workflows to micro-interactions. A&nbsp;Shenkar graduate with academic honors.</p></div>
+          <div style="margin:40px 0 0"><a href="https://drive.google.com/file/d/1qD5mEyvFs1UCy_-uA3gH0NCAPcRYBEB9/view?usp=sharing" target="_blank" rel="noopener" onMouseEnter="{{ cvIn }}" onTouchStart="{{ cvPress }}" onMouseLeave="{{ cvOut }}" class="t-button" style="{{ cvStyle }}"><span aria-hidden="true" style="{{ cvFill }}"></span><span style="position:relative">View my CV</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="{{ cvArrow }}"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a></div>
           <div style="display:grid;grid-template-columns:{{ G.half }};gap:{{ L.secYS }} {{ L.gap }};margin:{{ S.s13 }} 0 0">
           <div>
-            <h3 style="text-transform:uppercase;font-family:Figtree,sans-serif;line-height:1.5;font-weight:500;font-size:14px;letter-spacing:0.03em;color:#646873;margin:0 0 16px;text-wrap:balance">Skills</h3>
+            <h3 class="t-label" style="color:var(--text-2);margin:0 0 16px;text-wrap:balance">Skills</h3>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Product design (UX/UI)</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Interaction design &amp; prototyping</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">User research</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Design systems</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">AI-assisted design workflows</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Branding &amp; identity</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Motion &amp; title design</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Typography</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Product design (UX/UI)</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Interaction design &amp; prototyping</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">User research</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Design systems</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">AI-assisted design workflows</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Branding &amp; identity</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Motion &amp; title design</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Typography</span>
             </div>
           </div>
           <div>
-            <h3 style="text-transform:uppercase;font-family:Figtree,sans-serif;line-height:1.5;font-weight:500;font-size:14px;letter-spacing:0.03em;color:#646873;margin:0 0 16px;text-wrap:balance">Tools</h3>
+            <h3 class="t-label" style="color:var(--text-2);margin:0 0 16px;text-wrap:balance">Tools</h3>
             <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Figma &amp; Figma Make</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Adobe Illustrator, Photoshop, InDesign</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">After Effects &amp; Premiere Pro</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Cinema 4D</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Claude Code</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Weavy, Lovable, v0</span>
-              <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">Miro</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Figma &amp; Figma Make</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Adobe Illustrator, Photoshop, InDesign</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">After Effects &amp; Premiere Pro</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Cinema 4D</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Claude Code</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Weavy, Lovable, v0</span>
+              <span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">Miro</span>
             </div>
           </div>
           </div>
@@ -221,10 +255,10 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 <div data-page-wrap="1" style="padding-top:64px">
   <section style="padding:{{ L.secY }} {{ L.padX }} 0;max-width:none;margin:0 auto">
     <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 0 {{ S.s9 }}">
-      <h1 style="font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h1F }};line-height:{{ T.h1L }};letter-spacing:-0.035em;color:#11131A;margin:0;text-wrap:balance">Work<span style="display:inline-block;position:relative;top:0.1em;font-family:Figtree,sans-serif;font-weight:400;font-size:14px;letter-spacing:0;vertical-align:top;line-height:20px;margin-left:10px;color:#11131A">({{ projCount }})</span></h1>
+      <h1 class="t-h1" style="color:var(--ink);margin:0;text-wrap:balance">Work<span class="t-body-sm" style="display:inline-block;position:relative;top:0.1em;vertical-align:top;margin-left:10px;color:var(--ink)">({{ projCount }})</span></h1>
       <div style="display:flex;align-items:baseline;gap:16px">
-        <a href="#projects" onClick="{{ setListView }}" style="{{ listBtnStyle }}" style-hover="color:#11131A;background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">List</a>
-        <a href="#projects" onClick="{{ setGridView }}" style="{{ gridBtnStyle }}" style-hover="color:#11131A;background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">Grid</a>
+        <a href="#projects" onClick="{{ setGridView }}" class="t-button" style="{{ gridBtnStyle }}" style-hover="color:var(--ink);background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">Grid</a>
+        <a href="#projects" onClick="{{ setListView }}" class="t-button" style="{{ listBtnStyle }}" style-hover="color:var(--ink);background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">List</a>
       </div>
     </div>
     <sc-if value="{{ isGridView }}" hint-placeholder-val="{{ false }}">
@@ -238,13 +272,13 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
     </sc-if>
 
     <sc-if value="{{ isListView }}" hint-placeholder-val="{{ true }}">
-    <div onMouseLeave="{{ clearHover }}" style="border-bottom:1px solid #DCDFE5">
+    <div onMouseLeave="{{ clearHover }}" style="border-bottom:1px solid var(--line)">
       <sc-for list="{{ all }}" as="p" hint-placeholder-count="6">
         <div>
         <a href="{{ p.href }}" onClick="{{ p.go }}" onMouseEnter="{{ p.enter }}" onMouseLeave="{{ clearHover }}" style="{{ p.rowStyle }}">
-          <span style="color:#11131A;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;min-width:0">{{ p.title }}</span>
-          <span style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ p.tagList }}" as="t" hint-placeholder-count="2"><span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;border:1px solid #DCDFE5;border-radius:6px;padding:3px 8px;white-space:nowrap">{{ t.label }}</span></sc-for></span>
-          <span style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;text-align:right">{{ p.year }}</span>
+          <span class="t-h2" style="color:var(--ink);min-width:0">{{ p.title }}</span>
+          <span style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ p.tagList }}" as="t" hint-placeholder-count="2"><span class="t-body-sm" style="color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap">{{ t.label }}</span></sc-for></span>
+          <span class="t-body-sm" style="color:var(--text-2);text-align:right">{{ p.year }}</span>
         </a>
         </div>
       </sc-for>
@@ -258,34 +292,34 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 <sc-if value="{{ isCase }}" hint-placeholder-val="{{ false }}">
 <div ref="{{ caseRef }}" data-page-wrap="1" style="padding-top:56px;background:#ffffff;position:relative;z-index:1">
   <sc-if value="{{ heroOn }}" hint-placeholder-val="{{ false }}">
-  <section style="position:relative;height:min(calc((100svh - 56px) * 0.667),56.25vw);min-height:0;overflow:hidden;background:#11131A">
+  <section style="position:relative;height:min(calc((100svh - 56px) * 0.667),56.25vw);min-height:0;overflow:hidden;background:var(--ink)">
     <div style="position:absolute;inset:0;background-image:url('{{ heroImg }}');background-size:cover;background-position:center"></div>
     <sc-if value="{{ heroHasVideo }}" hint-placeholder-val="{{ false }}">
       <video data-hsrc="{{ heroVideo }}" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
     </sc-if>
-    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,19,26,0.32) 0%,rgba(17,19,26,0) 24%,rgba(17,19,26,0) 38%,rgba(17,19,26,0.45) 66%,rgba(17,19,26,0.82) 100%);pointer-events:none"></div>
-    <a href="#top" onClick="{{ goBack }}" style="position:absolute;top:clamp(20px,2.4vw,40px);left:{{ L.padX }};display:inline-flex;align-items:center;gap:8px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;color:#ffffff;text-decoration:none;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:block"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Back</a>
-    <h1 style="position:absolute;left:{{ L.padX }};right:{{ L.padX }};bottom:clamp(24px,3vw,56px);margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h1F }};line-height:1;letter-spacing:-0.035em;color:#ffffff;overflow:hidden;padding-bottom:0.06em;overflow-wrap:break-word;text-wrap:balance"><span style="{{ projLine0 }}">{{ proj.title }}</span></h1>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ink-rgb),0.32) 0%,rgba(var(--ink-rgb),0) 24%,rgba(var(--ink-rgb),0) 38%,rgba(var(--ink-rgb),0.45) 66%,rgba(var(--ink-rgb),0.82) 100%);pointer-events:none"></div>
+    <a href="#top" onClick="{{ goBack }}" class="t-button" style="position:absolute;top:clamp(20px,2.4vw,40px);left:{{ L.padX }};display:inline-flex;align-items:center;gap:8px;color:#ffffff;text-decoration:none;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:block"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg>Back</a>
+    <h1 class="t-h1" style="line-height:1;position:absolute;left:{{ L.padX }};right:{{ L.padX }};bottom:clamp(24px,3vw,56px);margin:0;color:#ffffff;overflow:hidden;padding-bottom:0.06em;overflow-wrap:break-word;text-wrap:balance"><span style="{{ projLine0 }}">{{ proj.title }}</span></h1>
   </section>
   <section style="padding:{{ L.secY }} {{ L.padX }} 0">
-    <span style="display:block;margin:0 0 16px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#646873">Overview</span>
+    <span class="t-label" style="display:block;margin:0 0 16px;color:var(--text-2)">Overview</span>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px {{ L.gap }};align-items:start">
-      <h2 style="margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A;text-wrap:balance">{{ kase.tagline }}</h2>
-      <p style="margin:0;padding-top:0.3em;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty;max-width:65ch">{{ kase.intro }}</p>
+      <h2 class="t-h2" style="margin:0;color:var(--ink);text-wrap:balance">{{ kase.tagline }}</h2>
+      <p class="t-body-lg" style="margin:0;padding-top:0.3em;color:var(--ink);text-wrap:pretty;max-width:65ch">{{ kase.intro }}</p>
     </div>
-    <dl style="display:grid;grid-template-columns:{{ factCols }};gap:32px {{ L.gap }};margin:{{ L.secYS }} 0 0;padding-top:24px;border-top:1px solid #DCDFE5">
+    <dl style="display:grid;grid-template-columns:{{ factCols }};gap:32px {{ L.gap }};margin:{{ L.secYS }} 0 0;padding-top:24px;border-top:1px solid var(--line)">
       <div style="display:flex;flex-direction:column;gap:8px">
-        <dt style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873">Year</dt>
-        <dd style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0;color:#11131A">{{ kase.year }}</dd>
+        <dt class="t-label" style="color:var(--text-2)">Year</dt>
+        <dd class="t-body" style="margin:0;color:var(--ink)">{{ kase.year }}</dd>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px">
-        <dt style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873">Disciplines</dt>
-        <dd style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0;color:#11131A">{{ kase.disciplines }}</dd>
+        <dt class="t-label" style="color:var(--text-2)">Disciplines</dt>
+        <dd class="t-body" style="margin:0;color:var(--ink)">{{ kase.disciplines }}</dd>
       </div>
       <sc-for list="{{ kase.facts }}" as="row" hint-placeholder-count="2">
         <div style="display:flex;flex-direction:column;gap:8px">
-          <dt style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873">{{ row.k }}</dt>
-          <dd style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0;color:#11131A;text-wrap:pretty">{{ row.v }}</dd>
+          <dt class="t-label" style="color:var(--text-2)">{{ row.k }}</dt>
+          <dd class="t-body" style="margin:0;color:var(--ink);text-wrap:pretty">{{ row.v }}</dd>
         </div>
       </sc-for>
     </dl>
@@ -293,29 +327,29 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
   </sc-if>
   <sc-if value="{{ heroOff }}" hint-placeholder-val="{{ true }}">
   <section style="padding:40px {{ L.padX }} 0;max-width:none;margin:0 auto">
-    <a href="#top" onClick="{{ goBack }}" style-hover="color:#646873" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:40px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;text-transform:uppercase;color:#11131A;text-decoration:none;transition:color 250ms ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg><span>Back</span></a>
+    <a href="#top" onClick="{{ goBack }}" style-hover="color:var(--text-2)" class="t-label" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:40px;color:var(--ink);text-decoration:none;transition:color 250ms ease"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M19 12H5"></path><path d="M11 6l-6 6 6 6"></path></svg><span>Back</span></a>
     <sc-if value="{{ hasCase }}" hint-placeholder-val="{{ false }}">
-    <h1 style="text-transform:uppercase;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h1F }};line-height:{{ T.caseH1L }};letter-spacing:-0.03em;margin:0;overflow:hidden;padding-bottom:0.04em;overflow-wrap:break-word;text-wrap:balance"><span style="{{ projLine0 }}">{{ proj.title }}</span></h1>
+    <h1 class="t-h1 t-h1-caps" style="margin:0;overflow:hidden;padding-bottom:0.04em;overflow-wrap:break-word;text-wrap:balance"><span style="{{ projLine0 }}">{{ proj.title }}</span></h1>
     <div style="display:grid;grid-template-columns:{{ G.half }};gap:{{ L.secYS }} {{ L.gap }};padding:80px 0 0;align-items:start">
       <div style="display:flex;flex-direction:column;gap:16px">
-        <h2 style="font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;margin:0;text-wrap:balance">{{ kase.tagline }}</h2>
-        <p style="font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;margin:0;text-wrap:pretty;max-width:65ch">{{ kase.intro }}</p>
+        <h2 class="t-h2" style="margin:0;text-wrap:balance">{{ kase.tagline }}</h2>
+        <p class="t-body-lg" style="margin:0;text-wrap:pretty;max-width:65ch">{{ kase.intro }}</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px">
-        <h2 style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873;margin:0;text-wrap:balance">Overview</h2>
+        <h2 class="t-label" style="color:var(--text-2);margin:0;text-wrap:balance">Overview</h2>
         <dl style="display:flex;flex-direction:column;gap:16px;margin:0">
           <div style="display:flex;flex-direction:column;gap:8px">
-            <dt style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873">Year</dt>
-            <dd style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0">{{ kase.year }}</dd>
+            <dt class="t-label" style="color:var(--text-2)">Year</dt>
+            <dd class="t-body" style="margin:0">{{ kase.year }}</dd>
           </div>
-          <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #DCDFE5;padding-top:16px">
-            <dt style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873">Disciplines</dt>
-            <dd style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0">{{ kase.disciplines }}</dd>
+          <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:16px">
+            <dt class="t-label" style="color:var(--text-2)">Disciplines</dt>
+            <dd class="t-body" style="margin:0">{{ kase.disciplines }}</dd>
           </div>
           <sc-for list="{{ kase.facts }}" as="row" hint-placeholder-count="2">
-            <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #DCDFE5;padding-top:16px">
-              <dt style="text-transform:uppercase;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;letter-spacing:0.03em;color:#646873">{{ row.k }}</dt>
-              <dd style="font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0;text-wrap:pretty">{{ row.v }}</dd>
+            <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--line);padding-top:16px">
+              <dt class="t-label" style="color:var(--text-2)">{{ row.k }}</dt>
+              <dd class="t-body" style="margin:0;text-wrap:pretty">{{ row.v }}</dd>
             </div>
           </sc-for>
         </dl>
@@ -323,15 +357,15 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
     </div>
     </sc-if>
     <sc-if value="{{ noCase }}" hint-placeholder-val="{{ false }}">
-    <h1 style="text-transform:uppercase;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h1F }};line-height:{{ T.h1L }};letter-spacing:-0.03em;margin:0;overflow:hidden;padding-bottom:0.04em;text-wrap:balance"><span style="{{ projLine1 }}">{{ proj.title }}</span></h1>
+    <h1 class="t-h1 t-h1-caps" style="margin:0;overflow:hidden;padding-bottom:0.04em;text-wrap:balance"><span style="{{ projLine1 }}">{{ proj.title }}</span></h1>
     <div style="display:grid;grid-template-columns:{{ G.quarters }};gap:{{ L.secYS }} {{ L.gap }};padding:{{ S.s14 }} 0;margin-top:{{ S.s15 }}">
       <div>
-        <h3 style="text-transform:uppercase;font-family:Figtree,sans-serif;line-height:1.5;font-weight:500;font-size:14px;letter-spacing:0.03em;color:#646873;margin:0 0 8px;text-wrap:balance">Role</h3>
-        <p style="font-size:16px;font-weight:400;font-family:Figtree,sans-serif;line-height:24px;margin:0;text-wrap:pretty">{{ proj.roles }}</p>
+        <h3 class="t-label" style="color:var(--text-2);margin:0 0 8px;text-wrap:balance">Role</h3>
+        <p class="t-body" style="margin:0;text-wrap:pretty">{{ proj.roles }}</p>
       </div>
       <div>
-        <h3 style="text-transform:uppercase;font-family:Figtree,sans-serif;line-height:1.5;font-weight:500;font-size:14px;letter-spacing:0.03em;color:#646873;margin:0 0 8px;text-wrap:balance">Year</h3>
-        <p style="font-size:16px;line-height:1.6;font-weight:400;font-family:Figtree,sans-serif;margin:0;max-width:65ch;text-wrap:pretty">{{ proj.year }}</p>
+        <h3 class="t-label" style="color:var(--text-2);margin:0 0 8px;text-wrap:balance">Year</h3>
+        <p class="t-body" style="margin:0;max-width:65ch;text-wrap:pretty">{{ proj.year }}</p>
       </div>
     </div>
     </sc-if>
@@ -348,25 +382,25 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 <sc-if value="{{ hasStory }}" hint-placeholder-val="{{ false }}">
   <section style="padding:clamp(64px,7vw,112px) {{ L.padX }} 0">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:40px {{ L.gap }};align-items:start">
-      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span style="display:inline-flex;align-items:center;gap:10px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></span>The challenge</span><p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty;max-width:36em">{{ story.challenge }}</p></div>
-      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span style="display:inline-flex;align-items:center;gap:10px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="8" r="3.8"></circle><path d="M4.5 20.5c1.2-3.8 4.1-5.6 7.5-5.6s6.3 1.8 7.5 5.6"></path></svg></span>The user</span><p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty;max-width:36em">{{ story.user }}</p></div>
+      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span class="t-label" style="display:inline-flex;align-items:center;gap:10px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></span>The challenge</span><p class="t-body-lg" style="margin:0;color:var(--ink);text-wrap:pretty;max-width:36em">{{ story.challenge }}</p></div>
+      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span class="t-label" style="display:inline-flex;align-items:center;gap:10px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="8" r="3.8"></circle><path d="M4.5 20.5c1.2-3.8 4.1-5.6 7.5-5.6s6.3 1.8 7.5 5.6"></path></svg></span>The user</span><p class="t-body-lg" style="margin:0;color:var(--ink);text-wrap:pretty;max-width:36em">{{ story.user }}</p></div>
     </div>
   </section>
   </sc-if>
   <sc-if value="{{ hasRoles }}" hint-placeholder-val="{{ false }}">
   <section ref="{{ roleRef }}" style="padding:clamp(64px,7vw,112px) {{ L.padX }} 0">
-    <span style="display:flex;align-items:center;gap:10px;margin:0 0 24px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><rect x="3.5" y="7.5" width="17" height="12" rx="2"></rect><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"></path><path d="M3.5 12.5h17"></path></svg></span>My role</span>
+    <span class="t-label" style="display:flex;align-items:center;gap:10px;margin:0 0 24px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><rect x="3.5" y="7.5" width="17" height="12" rx="2"></rect><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"></path><path d="M3.5 12.5h17"></path></svg></span>My role</span>
     <sc-if value="{{ roleLine }}" hint-placeholder-val="{{ true }}"><div style="{{ roleRow }}">
       <sc-for list="{{ roleSteps }}" as="st" hint-placeholder-count="4">
-        <span style="{{ st.unit }}"><span style="{{ st.pill }}">{{ st.name }}</span>
+        <span style="{{ st.unit }}"><span class="t-body-sm t-medium" style="{{ st.pill }}">{{ st.name }}</span>
         <sc-if value="{{ st.notLast }}" hint-placeholder-val="{{ true }}"><span data-dash="1" style="{{ st.line }}"></span></sc-if></span>
       </sc-for>
     </div></sc-if>
     <sc-if value="{{ roleSnake }}" hint-placeholder-val="{{ false }}">
     <div style="display:grid;grid-template-columns:{{ roleSnakeCols }};align-items:center;max-width:880px;view-timeline-name:--roles">
       <sc-for list="{{ roleSnakeCells }}" as="cl" hint-placeholder-count="0">
-        <sc-if value="{{ cl.isPill }}" hint-placeholder-val="{{ false }}"><span style="{{ cl.style }}">{{ cl.name }}</span></sc-if>
-        <sc-if value="{{ cl.isDash }}" hint-placeholder-val="{{ false }}"><span data-dash="1" style="{{ cl.style }}"></span></sc-if>
+        <sc-if value="{{ cl.isPill }}" hint-placeholder-val="{{ false }}"><span class="t-body-sm t-medium" style="{{ cl.style }}">{{ cl.name }}</span></sc-if>
+        <sc-if value="{{ cl.isDash }}" hint-placeholder-val="{{ false }}"><span data-dash="1" class="t-body-sm t-medium" style="{{ cl.style }}"></span></sc-if>
         <sc-if value="{{ cl.isEmpty }}" hint-placeholder-val="{{ false }}"><span></span></sc-if>
       </sc-for>
     </div>
@@ -375,14 +409,14 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
   </sc-if>
   <sc-if value="{{ hasGoals }}" hint-placeholder-val="{{ false }}">
   <section ref="{{ goalRef }}" style="padding:clamp(64px,7vw,112px) {{ L.padX }} 0">
-    <span style="display:flex;align-items:center;gap:10px;margin:0 0 24px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M6 21V4"></path><path d="M6 4.5h11l-2.2 3.8L17 12H6"></path></svg></span>Design goals</span>
+    <span class="t-label" style="display:flex;align-items:center;gap:10px;margin:0 0 24px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M6 21V4"></path><path d="M6 4.5h11l-2.2 3.8L17 12H6"></path></svg></span>Design goals</span>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:{{ L.gap }}">
       <sc-for list="{{ goals }}" as="g" hint-placeholder-count="3">
         <div style="{{ g.card }}">
           <div style="display:flex;flex-direction:column;gap:8px">
-            <span style="display:block;margin:0 0 8px;font-family:Figtree,sans-serif;font-weight:500;font-size:16px;line-height:24px;color:#1818EA">{{ g.n }}</span>
-            <h3 style="margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(18px,calc(0.2vw + 16px),20px);line-height:1.3;letter-spacing:-0.02em;color:#11131A;text-wrap:balance">{{ g.title }}</h3>
-            <p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.5;color:#11131A;text-wrap:pretty">{{ g.text }}</p>
+            <span class="t-body-strong" style="display:block;margin:0 0 8px;color:#1818EA">{{ g.n }}</span>
+            <h3 class="t-h4" style="margin:0;color:var(--ink);text-wrap:balance">{{ g.title }}</h3>
+            <p class="t-body" style="margin:0;color:var(--ink);text-wrap:pretty">{{ g.text }}</p>
           </div>
         </div>
       </sc-for>
@@ -392,9 +426,9 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
   <sc-if value="{{ hasStory }}" hint-placeholder-val="{{ false }}">
   <section style="padding:clamp(64px,7vw,112px) {{ L.padX }} 0">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px {{ L.gap }};align-items:start">
-      <h2 style="margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A;text-wrap:balance">Outcome</h2>
+      <h2 class="t-h2" style="margin:0;color:var(--ink);text-wrap:balance">Outcome</h2>
       <div style="display:flex;flex-direction:column">
-        <sc-for list="{{ story.outcomes }}" as="o" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:8px 0;{{ o.anim }}"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:#1818EA;display:flex;align-items:center;justify-content:center;align-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:block"><path d="M6 12.4l4 4 8-8.6"></path></svg></span><span style="font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty">{{ o.text }}</span></div></sc-for>
+        <sc-for list="{{ story.outcomes }}" as="o" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:8px 0;{{ o.anim }}"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:#1818EA;display:flex;align-items:center;justify-content:center;align-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:block"><path d="M6 12.4l4 4 8-8.6"></path></svg></span><span class="t-body-lg" style="color:var(--ink);text-wrap:pretty">{{ o.text }}</span></div></sc-for>
       </div>
     </div>
   </section>
@@ -403,16 +437,16 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
     <sc-for list="{{ kase.blocks }}" as="blk" hint-placeholder-count="0">
       <sc-if value="{{ blk.isFeatures }}" hint-placeholder-val="{{ false }}">
         <div style="margin-top:{{ blk.topGap }};display:flex;flex-direction:column;gap:24px">
-          <span style="display:flex;align-items:center;gap:10px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:#1818EA;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4 6.9 19.1l1-5.6-4.1-4 5.7-.8z"></path></svg></span>Two signature features</span>
+          <span class="t-label" style="display:flex;align-items:center;gap:10px;color:#1818EA"><span style="flex:none;width:32px;height:32px;border-radius:50%;background:#1818EA;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M12 3.5l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.4 6.9 19.1l1-5.6-4.1-4 5.7-.8z"></path></svg></span>Two signature features</span>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px {{ L.gap }}">
             <sc-for list="{{ blk.items }}" as="ft" hint-placeholder-count="2">
               <div style="display:flex;flex-direction:column;gap:12px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%">
-                <h3 style="margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A;text-wrap:balance">{{ ft.title }}</h3>
-                <p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty;max-width:52ch">{{ ft.text }}</p>
+                <h3 class="t-h2" style="margin:0;color:var(--ink);text-wrap:balance">{{ ft.title }}</h3>
+                <p class="t-body-lg" style="margin:0;color:var(--ink);text-wrap:pretty;max-width:52ch">{{ ft.text }}</p>
                 <sc-if value="{{ ft.hasScale }}" hint-placeholder-val="{{ false }}">
                   <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;max-width:360px">
                     <div style="display:flex;align-items:center;justify-content:space-between;gap:4px"><sc-for list="{{ ft.dots }}" as="d" hint-placeholder-count="10"><span style="{{ d.style }}"></span></sc-for></div>
-                    <div style="display:flex;justify-content:space-between;font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873"><span>Then</span><span>Now</span></div>
+                    <div class="t-body-sm" style="display:flex;justify-content:space-between;color:var(--text-2)"><span>Then</span><span>Now</span></div>
                   </div>
                 </sc-if>
               </div>
@@ -421,49 +455,49 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
         </div>
       </sc-if>
       <sc-if value="{{ blk.isHeading }}" hint-placeholder-val="{{ false }}">
-        <h2 style="margin:{{ blk.topGap }} 0 0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A;text-wrap:balance">{{ blk.title }}</h2>
+        <h2 class="t-h2" style="margin:{{ blk.topGap }} 0 0;color:var(--ink);text-wrap:balance">{{ blk.title }}</h2>
       </sc-if>
       <sc-if value="{{ blk.isText }}" hint-placeholder-val="{{ false }}">
         <div style="margin-top:{{ blk.topGap }}">
           <sc-if value="{{ blk.kickerBig }}" hint-placeholder-val="{{ false }}">
-            <h2 style="margin:0 0 24px;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A;text-wrap:balance">{{ blk.kicker }}</h2>
+            <h2 class="t-h2" style="margin:0 0 24px;color:var(--ink);text-wrap:balance">{{ blk.kicker }}</h2>
           </sc-if>
           <sc-if value="{{ blk.kickerSmall }}" hint-placeholder-val="{{ true }}">
-            <span style="display:block;margin:0 0 16px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#646873">{{ blk.kicker }}</span>
+            <span class="t-label" style="display:block;margin:0 0 16px;color:var(--text-2)">{{ blk.kicker }}</span>
           </sc-if>
           <sc-if value="{{ blk.hasMeta }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex;flex-direction:column;gap:clamp(56px,6vw,96px);margin:8px 0 clamp(56px,6vw,96px)">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:40px {{ L.gap }};align-items:start">
-      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span style="display:inline-flex;align-items:center;gap:10px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></span>The challenge</span><p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty;max-width:36em">{{ blk.metaChallenge }}</p></div>
-      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span style="display:inline-flex;align-items:center;gap:10px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="8" r="3.8"></circle><path d="M4.5 20.5c1.2-3.8 4.1-5.6 7.5-5.6s6.3 1.8 7.5 5.6"></path></svg></span>The user</span><p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty;max-width:36em">{{ blk.metaUser }}</p></div>
+      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span class="t-label" style="display:inline-flex;align-items:center;gap:10px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4.5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg></span>The challenge</span><p class="t-body-lg" style="margin:0;color:var(--ink);text-wrap:pretty;max-width:36em">{{ blk.metaChallenge }}</p></div>
+      <div style="display:flex;flex-direction:column;gap:24px;animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% cover 22%"><span class="t-label" style="display:inline-flex;align-items:center;gap:10px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><circle cx="12" cy="8" r="3.8"></circle><path d="M4.5 20.5c1.2-3.8 4.1-5.6 7.5-5.6s6.3 1.8 7.5 5.6"></path></svg></span>The user</span><p class="t-body-lg" style="margin:0;color:var(--ink);text-wrap:pretty;max-width:36em">{{ blk.metaUser }}</p></div>
     </div>
             <div>
-              <span style="display:flex;align-items:center;gap:10px;margin:0 0 24px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><rect x="3.5" y="7.5" width="17" height="12" rx="2"></rect><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"></path><path d="M3.5 12.5h17"></path></svg></span>My role</span>
+              <span class="t-label" style="display:flex;align-items:center;gap:10px;margin:0 0 24px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><rect x="3.5" y="7.5" width="17" height="12" rx="2"></rect><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"></path><path d="M3.5 12.5h17"></path></svg></span>My role</span>
               <sc-if value="{{ blk.metaLine }}" hint-placeholder-val="{{ true }}"><div style="display:flex;flex-wrap:nowrap;align-items:center">
               <sc-for list="{{ blk.metaRoles }}" as="st" hint-placeholder-count="3">
-                <span style="{{ st.unit }}"><span style="display:inline-flex;align-items:center;gap:10px;flex:none;white-space:nowrap;padding:8px 16px;border:1px solid #F7F8FA;border-radius:100px;background:#F7F8FA;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;color:#11131A;{{ st.anim }}">{{ st.name }}</span>
+                <span style="{{ st.unit }}"><span class="t-body-sm t-medium" style="display:inline-flex;align-items:center;gap:10px;flex:none;white-space:nowrap;padding:8px 16px;border:1px solid var(--surface);border-radius:100px;background:var(--surface);color:var(--ink);{{ st.anim }}">{{ st.name }}</span>
                 <sc-if value="{{ st.notLast }}" hint-placeholder-val="{{ true }}"><span data-dash="1" style="{{ st.line }}"></span></sc-if></span>
               </sc-for>
               </div></sc-if>
               <sc-if value="{{ blk.metaSnake }}" hint-placeholder-val="{{ false }}">
               <div style="display:grid;grid-template-columns:{{ blk.metaSnakeCols }};align-items:center;max-width:880px;view-timeline-name:--roles">
                 <sc-for list="{{ blk.metaSnakeCells }}" as="cl" hint-placeholder-count="0">
-                  <sc-if value="{{ cl.isPill }}" hint-placeholder-val="{{ false }}"><span style="{{ cl.style }}">{{ cl.name }}</span></sc-if>
-                  <sc-if value="{{ cl.isDash }}" hint-placeholder-val="{{ false }}"><span data-dash="1" style="{{ cl.style }}"></span></sc-if>
+                  <sc-if value="{{ cl.isPill }}" hint-placeholder-val="{{ false }}"><span class="t-body-sm t-medium" style="{{ cl.style }}">{{ cl.name }}</span></sc-if>
+                  <sc-if value="{{ cl.isDash }}" hint-placeholder-val="{{ false }}"><span data-dash="1" class="t-body-sm t-medium" style="{{ cl.style }}"></span></sc-if>
                   <sc-if value="{{ cl.isEmpty }}" hint-placeholder-val="{{ false }}"><span></span></sc-if>
                 </sc-for>
               </div>
               </sc-if>
             </div>
             <div>
-              <span style="display:flex;align-items:center;gap:10px;margin:0 0 24px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M6 21V4"></path><path d="M6 4.5h11l-2.2 3.8L17 12H6"></path></svg></span>Design goals</span>
+              <span class="t-label" style="display:flex;align-items:center;gap:10px;margin:0 0 24px;color:#1818EA"><span style="flex:none;width:32px;height:32px;box-sizing:border-box;background:#1818EA;border-radius:50%;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;display:block"><path d="M6 21V4"></path><path d="M6 4.5h11l-2.2 3.8L17 12H6"></path></svg></span>Design goals</span>
               <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:{{ L.gap }}">
                 <sc-for list="{{ blk.metaGoals }}" as="g" hint-placeholder-count="3">
-                  <div style="display:flex;flex-direction:column;background:#F7F8FA;border-radius:clamp(12px,1.4vw,20px);padding:clamp(20px,1.8vw,24px);{{ g.anim }}">
+                  <div style="display:flex;flex-direction:column;background:var(--surface);border-radius:clamp(12px,1.4vw,20px);padding:clamp(20px,1.8vw,24px);{{ g.anim }}">
                     <div style="display:flex;flex-direction:column;gap:8px">
-                      <span style="display:block;margin:0 0 8px;font-family:Figtree,sans-serif;font-weight:500;font-size:16px;line-height:24px;color:#1818EA">{{ g.n }}</span>
-                      <h3 style="margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(18px,calc(0.2vw + 16px),20px);line-height:1.3;letter-spacing:-0.02em;color:#11131A;text-wrap:balance">{{ g.title }}</h3>
-                      <p style="margin:0;font-family:Figtree,sans-serif;font-weight:400;font-size:16px;line-height:1.5;color:#11131A;text-wrap:pretty">{{ g.text }}</p>
+                      <span class="t-body-strong" style="display:block;margin:0 0 8px;color:#1818EA">{{ g.n }}</span>
+                      <h3 class="t-h4" style="margin:0;color:var(--ink);text-wrap:balance">{{ g.title }}</h3>
+                      <p class="t-body" style="margin:0;color:var(--ink);text-wrap:pretty">{{ g.text }}</p>
                     </div>
                   </div>
                 </sc-for>
@@ -474,20 +508,20 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px {{ L.gap }};align-items:start">
             <div style="display:flex;flex-direction:column;gap:8px">
               <sc-if value="{{ blk.hasTitle }}" hint-placeholder-val="{{ true }}">
-                <h2 style="font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A;margin:0;text-wrap:balance">{{ blk.title }}</h2>
+                <h2 class="t-h2" style="color:var(--ink);margin:0;text-wrap:balance">{{ blk.title }}</h2>
               </sc-if>
               <sc-if value="{{ blk.hasRole }}" hint-placeholder-val="{{ false }}">
-                <p style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;margin:0;color:#646873;text-wrap:pretty">Role: {{ blk.role }}</p>
+                <p class="t-body-sm" style="margin:0;color:var(--text-2);text-wrap:pretty">Role: {{ blk.role }}</p>
               </sc-if>
             </div>
             <div style="display:flex;flex-direction:column;gap:20px;padding-top:0.3em">
               <sc-for list="{{ blk.paras }}" as="para" hint-placeholder-count="2">
-                <p style="font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;margin:0;max-width:65ch;text-wrap:pretty">{{ para }}</p>
+                <p class="t-body-lg" style="color:var(--ink);margin:0;max-width:65ch;text-wrap:pretty">{{ para }}</p>
               </sc-for>
               <sc-if value="{{ blk.hasMetaOut }}" hint-placeholder-val="{{ false }}">
                 <div style="display:flex;flex-direction:column;margin-top:16px">
-                  <span style="display:block;margin:0 0 16px;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:1.5;letter-spacing:0.03em;text-transform:uppercase;color:#1818EA">Outcome</span>
-                  <div style="display:flex;flex-direction:column"><sc-for list="{{ blk.metaOut }}" as="o" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:8px 0;{{ o.anim }}"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:#1818EA;display:flex;align-items:center;justify-content:center;align-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:block"><path d="M6 12.4l4 4 8-8.6"></path></svg></span><span style="font-family:Figtree,sans-serif;font-weight:400;font-size:clamp(16px,calc(0.15vw + 15px),18px);line-height:1.6;color:#11131A;text-wrap:pretty">{{ o.text }}</span></div></sc-for></div>
+                  <span class="t-label" style="display:block;margin:0 0 16px;color:#1818EA">Outcome</span>
+                  <div style="display:flex;flex-direction:column"><sc-for list="{{ blk.metaOut }}" as="o" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding:8px 0;{{ o.anim }}"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:#1818EA;display:flex;align-items:center;justify-content:center;align-self:center"><svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;display:block"><path d="M6 12.4l4 4 8-8.6"></path></svg></span><span class="t-body-lg" style="color:var(--ink);text-wrap:pretty">{{ o.text }}</span></div></sc-for></div>
                 </div>
               </sc-if>
             </div>
@@ -502,7 +536,7 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
             <figure style="{{ im.figStyle }}">
               <div data-media-box="" style="cursor:zoom-in;position:relative;aspect-ratio:{{ im.ratio }};background:transparent;border-radius:clamp(10px,1.2vw,18px);overflow:hidden;opacity:0;transition:opacity 400ms ease">
                 <sc-if value="{{ im.hasSound }}" hint-placeholder-val="{{ false }}">
-                  <video data-src="{{ im.src }}" controls="" autoplay="" muted="" loop="" playsinline="" preload="auto" data-case-video="" data-sound="1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#11131A"></video>
+                  <video data-src="{{ im.src }}" controls="" autoplay="" muted="" loop="" playsinline="" preload="auto" data-case-video="" data-sound="1" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:var(--ink)"></video>
                 </sc-if>
                 <sc-if value="{{ im.hasSrc }}" hint-placeholder-val="{{ false }}">
                   <video data-src="{{ im.src }}" autoplay="" muted="" loop="" playsinline="" data-case-video="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block"></video>
@@ -512,7 +546,7 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
                 </sc-if>
               </div>
               <sc-if value="{{ im.hasCap }}" hint-placeholder-val="{{ false }}">
-                <figcaption style="font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#646873;text-wrap:pretty;max-width:65ch">{{ im.cap }}</figcaption>
+                <figcaption class="t-body-sm" style="color:var(--text-2);text-wrap:pretty;max-width:65ch">{{ im.cap }}</figcaption>
               </sc-if>
             </figure>
           </sc-for>
@@ -522,21 +556,21 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
       </sc-if>
     </sc-for>
     <sc-if value="{{ noCase }}" hint-placeholder-val="{{ false }}">
-      <div style="aspect-ratio:16/9;border-radius:clamp(10px,1.2vw,18px);background:repeating-linear-gradient(135deg,#F7F8FA 0 8px,#EBEDF1 8px 16px);display:flex;align-items:center;justify-content:center">
-        <span style="font-family:Figtree,sans-serif;line-height:16px;font-weight:400;font-size:12px;color:#646873">Case study coming soon</span>
+      <div style="aspect-ratio:16/9;border-radius:clamp(10px,1.2vw,18px);background:repeating-linear-gradient(135deg,var(--surface) 0 8px,var(--surface-2) 8px 16px);display:flex;align-items:center;justify-content:center">
+        <span style="font-family:Figtree,sans-serif;line-height:16px;font-weight:400;font-size:12px;color:var(--text-2)">Case study coming soon</span>
       </div>
     </sc-if>
   </section>
 
   <section style="padding:0 {{ L.padX }} {{ L.secYL }};max-width:none;margin:0 auto">
-    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:{{ L.gap }};align-items:start;padding-top:40px;border-top:1px solid #DCDFE5">
-    <a href="{{ prev.href }}" onClick="{{ prev.go }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:#11131A;text-decoration:none" style-hover="--ul:100%">
-      <span style="font-family:Figtree,sans-serif;text-transform:uppercase;line-height:1.5;font-weight:500;font-size:14px;letter-spacing:0.03em;color:#646873">Previous project</span>
-      <span style="display:inline-flex;align-items:center;gap:12px;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M17 17L7 7"></path><path d="M7 16V7h9"></path></svg><span style="padding-bottom:2px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:var(--ul,0%) 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)">{{ prev.title }}</span></span>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:{{ L.gap }};align-items:start;padding-top:40px;border-top:1px solid var(--line)">
+    <a href="{{ prev.href }}" onClick="{{ prev.go }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:var(--ink);text-decoration:none" style-hover="--ul:100%">
+      <span class="t-label" style="color:var(--text-2)">Previous project</span>
+      <span class="t-h2" style="display:inline-flex;align-items:center;gap:12px;color:var(--ink)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M17 17L7 7"></path><path d="M7 16V7h9"></path></svg><span style="padding-bottom:2px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:var(--ul,0%) 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)">{{ prev.title }}</span></span>
     </a>
-    <a href="{{ next.href }}" onClick="{{ next.go }}" style="display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:12px;color:#11131A;text-decoration:none" style-hover="--ul:100%">
-      <span style="font-family:Figtree,sans-serif;text-transform:uppercase;line-height:1.5;font-weight:500;font-size:14px;letter-spacing:0.03em;color:#646873">Next project</span>
-      <span style="display:inline-flex;align-items:center;gap:12px;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:{{ T.h2F }};line-height:{{ T.h2L }};letter-spacing:-0.01em;color:#11131A"><span style="padding-bottom:2px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:var(--ul,0%) 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)">{{ next.title }}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></span>
+    <a href="{{ next.href }}" onClick="{{ next.go }}" style="display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:12px;color:var(--ink);text-decoration:none" style-hover="--ul:100%">
+      <span class="t-label" style="color:var(--text-2)">Next project</span>
+      <span class="t-h2" style="display:inline-flex;align-items:center;gap:12px;color:var(--ink)"><span style="padding-bottom:2px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:var(--ul,0%) 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)">{{ next.title }}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block;flex-shrink:0"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></span>
     </a>
     </div>
   </section>
@@ -545,8 +579,8 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 
 <button type="button" onClick="{{ toTop }}" aria-label="Back to top" style="{{ fabStyle }}" style-hover="background:rgba(255,255,255,0.9)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;display:block"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg></button>
 <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
-<div role="dialog" aria-modal="true" aria-label="Media viewer" onClick="{{ lbBg }}" onTouchStart="{{ lbTS }}" onTouchMove="{{ lbTM }}" onTouchEnd="{{ lbTE }}" onTouchCancel="{{ lbTE }}" style="touch-action:none;overscroll-behavior:contain;position:fixed;inset:0;z-index:95;background:#11131A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:clamp(64px,6vw,88px) clamp(16px,6vw,96px) clamp(24px,3vw,40px);box-sizing:border-box">
-  <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:16px;top:calc(24px + env(safe-area-inset-top,0px));font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;color:#9A9EA8">{{ lbCount }}</span></sc-if>
+<div role="dialog" aria-modal="true" aria-label="Media viewer" onClick="{{ lbBg }}" onTouchStart="{{ lbTS }}" onTouchMove="{{ lbTM }}" onTouchEnd="{{ lbTE }}" onTouchCancel="{{ lbTE }}" style="touch-action:none;overscroll-behavior:contain;position:fixed;inset:0;z-index:95;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:clamp(64px,6vw,88px) clamp(16px,6vw,96px) clamp(24px,3vw,40px);box-sizing:border-box">
+  <sc-if value="{{ lbMulti }}" hint-placeholder-val="{{ false }}"><span class="t-body-sm t-medium" style="position:absolute;left:16px;top:calc(24px + env(safe-area-inset-top,0px));color:var(--text-3)">{{ lbCount }}</span></sc-if>
   <sc-if value="{{ lbArrows }}" hint-placeholder-val="{{ false }}">
     <button type="button" onClick="{{ lbPrev }}" aria-label="Previous" style="position:absolute;left:clamp(12px,1.6vw,28px);top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,0.14);color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block"><path d="M15 6l-6 6 6 6"></path></svg></button>
     <button type="button" onClick="{{ lbNext }}" aria-label="Next" style="position:absolute;right:clamp(12px,1.6vw,28px);top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,0.14);color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;display:block"><path d="M9 6l6 6-6 6"></path></svg></button>
@@ -555,25 +589,25 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
   <sc-if value="{{ lbIsImg }}" hint-placeholder-val="{{ false }}"><img key="{{ lbKey }}" ref="{{ lbImgRef }}" alt="{{ lbCap }}" style="display:block;max-width:100%;max-height:calc(100% - 56px);min-height:0;object-fit:contain;border-radius:8px"></sc-if>
   <sc-if value="{{ lbIsVid }}" hint-placeholder-val="{{ false }}"><video key="{{ lbKey }}" ref="{{ lbVidRef }}" controls="{{ true }}" autoPlay="{{ true }}" playsInline="{{ true }}" loop="{{ true }}" style="display:block;max-width:100%;max-height:calc(100% - 56px);min-height:0;border-radius:8px;background:#000"></video>
     <button type="button" onClick="{{ lbFull }}" aria-label="Full screen" style="position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:64px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,0.14);color:#ffffff;display:flex;align-items:center;justify-content:center;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:block"><path d="M4 9V4h5"></path><path d="M20 9V4h-5"></path><path d="M4 15v5h5"></path><path d="M20 15v5h-5"></path></svg></button></sc-if>
-  <sc-if value="{{ lbHasCap }}" hint-placeholder-val="{{ false }}"><span style="flex:none;max-width:min(100%,52ch);font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:20px;color:#ffffff;text-align:center;text-wrap:balance">{{ lbCap }}</span></sc-if>
+  <sc-if value="{{ lbHasCap }}" hint-placeholder-val="{{ false }}"><span class="t-body-sm" style="flex:none;max-width:min(100%,52ch);color:#ffffff;text-align:center;text-wrap:balance">{{ lbCap }}</span></sc-if>
 </div>
 </sc-if>
-<footer id="contact" style="background:#11131A;color:#ffffff;padding:clamp(64px,8vw,128px) {{ L.padX }} clamp(32px,3vw,48px);display:flex;flex-direction:column;gap:clamp(48px,6vw,96px)">
+<footer id="contact" style="background:var(--ink);color:#ffffff;padding:clamp(64px,8vw,128px) {{ L.padX }} clamp(32px,3vw,48px);display:flex;flex-direction:column;gap:clamp(48px,6vw,96px)">
   <div style="display:flex;flex-direction:column;align-items:flex-start;gap:clamp(24px,2.4vw,40px)">
-    <h2 style="margin:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(24px,calc(1.6vw + 14px),36px);line-height:1.25;letter-spacing:-0.01em;color:#ffffff;text-wrap:balance">Got something in mind? Let’s talk.</h2>
-    <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener" onMouseEnter="{{ footCtaIn }}" onTouchStart="{{ footCtaPress }}" onMouseLeave="{{ footCtaOut }}" style="{{ footCtaStyle }}"><span aria-hidden="true" style="{{ footCtaFill }}"></span><span style="position:relative">Get in touch</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="{{ footCtaArrow }}"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
+    <h2 class="t-h2" style="margin:0;color:#ffffff;text-wrap:balance">Got something in mind? Let’s talk.</h2>
+    <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener" onMouseEnter="{{ footCtaIn }}" onTouchStart="{{ footCtaPress }}" onMouseLeave="{{ footCtaOut }}" class="t-button" style="{{ footCtaStyle }}"><span aria-hidden="true" style="{{ footCtaFill }}"></span><span style="position:relative">Get in touch</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="{{ footCtaArrow }}"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg></a>
   </div>
   <div style="display:flex;flex-direction:column;gap:clamp(24px,2.4vw,32px)">
     <div style="height:1px;background:rgba(255,255,255,0.16)"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;gap:24px 32px;flex-wrap:wrap">
       <div style="display:flex;align-items:center;gap:16px 32px;flex-wrap:wrap">
-        <a href="https://www.linkedin.com/in/ofri-even-b74418321/" target="_blank" rel="noopener" style="position:relative;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;color:#ffffff;text-decoration:none;white-space:nowrap;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">LinkedIn</a>
-        <a href="https://www.instagram.com/ofri.e.design/" target="_blank" rel="noopener" style="position:relative;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;color:#ffffff;text-decoration:none;white-space:nowrap;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">Instagram</a>
-        <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener" style="position:relative;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;color:#ffffff;text-decoration:none;white-space:nowrap;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">ylb.ofri.even@gmail.com</a>
+        <a href="https://www.linkedin.com/in/ofri-even-b74418321/" target="_blank" rel="noopener" class="t-button" style="position:relative;color:#ffffff;text-decoration:none;white-space:nowrap;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">LinkedIn</a>
+        <a href="https://www.instagram.com/ofri.e.design/" target="_blank" rel="noopener" class="t-button" style="position:relative;color:#ffffff;text-decoration:none;white-space:nowrap;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">Instagram</a>
+        <a href="mailto:ylb.ofri.even@gmail.com" target="_blank" rel="noopener" class="t-button" style="position:relative;color:#ffffff;text-decoration:none;white-space:nowrap;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">ylb.ofri.even@gmail.com</a>
       </div>
-      <div style="display:flex;align-items:center;gap:16px 32px;flex-wrap:wrap;font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:1.5;color:#9A9EA8">
+      <div class="t-body-sm" style="display:flex;align-items:center;gap:16px 32px;flex-wrap:wrap;color:var(--text-3)">
         <span>© 2027 Ofri Even</span>
-        <a href="#top" onClick="{{ goHome }}" style="position:relative;display:inline-flex;align-items:center;gap:8px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;color:#ffffff;text-decoration:none;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">Back to top<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:block;flex-shrink:0"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg></a>
+        <a href="#top" onClick="{{ goHome }}" class="t-button" style="position:relative;display:inline-flex;align-items:center;gap:8px;color:#ffffff;text-decoration:none;padding-bottom:4px;background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:0% 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1)" style-hover="background-size:100% 1px" style-before="content:'';position:absolute;inset:-12px -8px">Back to top<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:block;flex-shrink:0"><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg></a>
       </div>
     </div>
   </div>
@@ -581,8 +615,8 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 
 <div style="{{ peekStyle }}"><div style="{{ peekInner }}"></div><sc-if value="{{ peekHasVideo }}" hint-placeholder-val="{{ false }}"><video key="{{ peekVideo }}" ref="{{ peekRef }}" autoPlay="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" preload="auto" onPlaying="{{ peekPlaying }}" style="{{ peekVideoStyle }}"></video></sc-if></div>
 <div ref="{{ cursorRef }}" style="position:fixed;left:0;top:0;width:0;height:0;z-index:90;pointer-events:none;will-change:transform;display:{{ cursorDisplay }}">
-  <div ref="{{ cursorDotRef }}" data-om-cursor="1" style="position:absolute;left:-28px;top:-28px;width:56px;height:56px;border-radius:50%;background:#DCDFE5;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.29);transition:transform 500ms cubic-bezier(0.16,1,0.3,1),background 300ms ease,opacity 250ms ease">
-    <span ref="{{ cursorLabelRef }}" style="font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;color:#ffffff;opacity:0;transition:opacity 200ms ease">View</span>
+  <div ref="{{ cursorDotRef }}" data-om-cursor="1" style="position:absolute;left:-28px;top:-28px;width:56px;height:56px;border-radius:50%;background:var(--line);display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.29);transition:transform 500ms cubic-bezier(0.16,1,0.3,1),background 300ms ease,opacity 250ms ease">
+    <span ref="{{ cursorLabelRef }}" class="t-body-sm t-medium" style="color:#ffffff;opacity:0;transition:opacity 200ms ease">View</span>
   </div>
 </div>
 </div>
@@ -1583,14 +1617,13 @@ const CASES = {
 
 const TIER = (vw) => vw < 768 ? 0 : vw < 1440 ? 1 : vw < 1920 ? 2 : vw < 2560 ? 3 : 4;
 const LAYOUT = [{ pad: 16, max: 0, gap: 16, secY: 48, secYL: 64, secYS: 32 }, { pad: 32, max: 0, gap: 24, secY: 64, secYL: 80, secYS: 40 }, { pad: 80, max: 1280, gap: 24, secY: 96, secYL: 112, secYS: 48 }, { pad: 96, max: 1440, gap: 32, secY: 120, secYL: 144, secYS: 64 }, { pad: 96, max: 1600, gap: 32, secY: 144, secYL: 160, secYS: 64 }];
-const TYPE = { h2: [[28,36],[28,36],[36,44],[36,44],[48,56]], link: [[28,36],[36,44],[48,56],[48,56],[48,56]], link2: [[20,28],[36,44],[48,56],[48,56],[48,56]], sub: [[16,24],[16,24],[20,28],[20,28],[20,28]], h1: [[48,48],[64,64],[96,96],[112,112],[128,128]], caseH1: [[48,48],[80,80],[128,128],[144,144],[160,160]], mq: [[36,44],[48,56],[80,88],[96,104],[112,120]], menu: [[48,56],[48,56],[48,56],[48,56],[48,56]] };
 const SPACING = [{"k":"s0","a":340,"v":56,"b":980},{"k":"s1","a":16,"v":2,"b":28},{"k":"s2","a":10,"v":1.2,"b":16},{"k":"s3","a":12,"v":1.4,"b":20},{"k":"s4","a":12,"v":1.5,"b":24},{"k":"s5","a":180,"v":34,"b":470},{"k":"s6","a":20,"v":3,"b":44},{"k":"s7","a":28,"v":4,"b":56},{"k":"s8","a":16,"v":1.8,"b":24},{"k":"s9","a":24,"v":3.5,"b":44},{"k":"s10","a":36,"v":3.8,"b":64},{"k":"s11","a":40,"v":5,"b":72},{"k":"s12","a":24,"v":3,"b":48},{"k":"s13","a":32,"v":4,"b":56},{"k":"s14","a":28,"v":4,"b":52},{"k":"s15","a":24,"v":3,"b":40},{"k":"s16","a":16,"v":4,"b":48}];
 const LADDER = [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 120];
 const snap = (x) => x > 120 ? Math.round(x / 8) * 8 : LADDER.reduce((b, v) => Math.abs(v - x) < Math.abs(b - x) ? v : b, 4);
 const tokens = (vw) => {
   const t = TIER(vw), L = LAYOUT[t];
   const padX = "max(clamp(20px,6vw,96px), calc((100% - 1680px) / 2))";
-  const T = { h2F: "clamp(24px,calc(1.6vw + 14px),36px)", h2L: "1.25", leadF: "clamp(18px,calc(0.25vw + 17px),20px)", leadL: "1.6", subF: "clamp(18px,calc(0.25vw + 17px),20px)", subL: "1.6", linkF: "clamp(24px,3.4vw,48px)", linkL: "1.18", link2F: "clamp(18px,3.4vw,48px)", link2L: "1.18", h1F: "clamp(44px,7vw,104px)", h1L: "1.1", caseH1F: "clamp(40px,8vw,154px)", caseH1L: "1.1", mqF: "clamp(26px,5.4vw,84px)", mqL: "1.1", menuF: "clamp(36px,11vw,56px)", menuL: "1.1" };
+  const T = {  };
   const S = {}; SPACING.forEach(s => { S[s.k] = snap(Math.min(s.b, Math.max(s.a, vw * s.v / 100))) + "px"; });
   const N = t === 0 ? 4 : t === 1 ? 8 : 12, g = L.gap;
   const span = (a) => "minmax(0,calc((100% - " + ((N - 1) * g) + "px) / " + N + " * " + a + " + " + ((a - 1) * g) + "px))";
@@ -1618,11 +1651,11 @@ const TYPE_TOKENS = [].concat(...["Hi, ", { s: "I’m Ofri", col: "#1818EA" }, "
 const HERO_CLIPS = [["assets/hero-reel-2.mp4", 0]].map(([src, at]) => ({ src, at }));
 const COVERS = { earnix: { src: "assets/earnix-cover.png", ratio: "1944/1104", clip: "" }, pyrite: { src: "assets/pyrite-cover.png", ratio: "1534/1118", clip: "" }, "beatles-2030": { src: "assets/beatles-2030-cover.png", ratio: "1605/1098", clip: "" } };
 const FEATURED = ["earnix", "pyrite", "beatles-2030"];
-const STRIPES = "repeating-linear-gradient(135deg,#F7F8FA 0 8px,#EBEDF1 8px 16px)";
+const STRIPES = "repeating-linear-gradient(135deg,var(--surface) 0 8px,var(--surface-2) 8px 16px)";
 
 class Component extends DCLogic {
   svcTimer = null;
-  state = { typed: 0, clip: 0, pview: "list", svc: 0, route: "home", hover: null, nav: null, card: null, mx: 0, my: 0, loaded: false, brand: false, frame: 1, vw: typeof window !== "undefined" ? window.innerWidth : 1440, menu: false };
+  state = { typed: 0, clip: 0, pview: "grid", svc: 0, route: "home", hover: null, nav: null, card: null, mx: 0, my: 0, loaded: false, brand: false, frame: 1, vw: typeof window !== "undefined" ? window.innerWidth : 1440, menu: false };
   vids = {};
   lbVidRef = (el) => { if (!el || !this.state.lb || this.state.lb.type !== "v") return; if (el.getAttribute("src") !== this.state.lb.src) { el.setAttribute("src", this.state.lb.src); try { el.currentTime = this.state.lb.t || 0; } catch (e) {} el.muted = !!this.state.lb.muted; const p = el.play(); if (p && p.catch) p.catch(() => { el.muted = true; el.play().catch(() => {}); }); } };
   mediaOf = (box) => {
@@ -1677,7 +1710,7 @@ class Component extends DCLogic {
   roleSnake = (r) => {
     const N = 3, rv = (i) => "animation:om-reveal linear both;animation-timeline:--roles;animation-range:entry " + Math.min(4 + i * 6, 70) + "% entry " + Math.min(24 + i * 6, 95) + "%";
     const dr = (i) => "animation-timeline:auto,--roles;animation-range:normal,entry " + Math.min(12 + i * 6, 78) + "% entry " + Math.min(28 + i * 6, 98) + "%";
-    const pill = (name, i) => ({ isPill: true, name, style: "justify-self:stretch;display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;text-wrap:balance;box-sizing:border-box;padding:8px 16px;border-radius:100px;background:#F7F8FA;font-family:Figtree,sans-serif;font-weight:500;font-size:14px;line-height:20px;color:#11131A;" + rv(i) });
+    const pill = (name, i) => ({ isPill: true, name, style: "justify-self:stretch;display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;text-wrap:balance;box-sizing:border-box;padding:8px 16px;border-radius:100px;background:var(--surface);color:var(--ink);" + rv(i) });
     const H = (rev, i) => ({ isDash: true, style: "align-self:center;height:2px;margin:0 8px;background-image:linear-gradient(90deg,#1818EA 0 8px,transparent 8px 14px);background-size:14px 2px;background-repeat:repeat-x;transform-origin:" + (rev ? "right" : "left") + " center;animation:om-dash 900ms linear infinite" + (rev ? " reverse" : "") + ",om-draw-x linear both;" + dr(i) });
     const V = (i) => ({ isDash: true, style: "justify-self:center;width:2px;height:24px;margin:4px 0;background-image:linear-gradient(180deg,#1818EA 0 6px,transparent 6px 11px);background-size:2px 11px;background-repeat:repeat-y;transform-origin:center top;animation:om-dash-v 900ms linear infinite,om-draw-y linear both;" + dr(i) });
     const E = { isEmpty: true }, cells = [];
@@ -1701,7 +1734,7 @@ class Component extends DCLogic {
       const topGap = K.blocks.slice(0, bi).every(x => x.skip) ? "0px" : K.blocks[bi - 1].pre ? "clamp(16px,2vw,32px)" : "clamp(32px,3.4vw,56px)";
       if (b.kind === "features") return { ...b, topGap, isFeatures: true, isHeading: false, isText: false, isMedia: false, items: b.items.map(it => ({ ...it, hasScale: !!it.scale, dots: it.scale ? Array.from({ length: 10 }, (_, k) => ({ style: "flex:none;width:10px;height:10px;border-radius:50%;background:" + (k < 7 ? "#FF810A" : "#1818EA") })) : [] })) };
       if (b.kind === "heading") return { ...b, topGap, isHeading: true, isText: false, isMedia: false, items: [] };
-      if (b.kind === "text") { const M = (SUB_META[slug] || {})[bi]; return { ...b, topGap: ((bi > 0 && K.blocks[bi - 1].kind === "heading") || (SUB_META[slug] && !b.kicker)) ? "clamp(24px,3vw,48px)" : topGap, isText: true, isMedia: false, hasKicker: !!b.kicker, kickerBig: !!b.kicker && !!SUB_META[slug], kickerSmall: !!b.kicker && !SUB_META[slug], hasTitle: !!b.title, hasRole: !!b.role && !M, hasMeta: !!M, metaRoleCols: narrow ? "repeat(2,minmax(0,1fr))" : "repeat(" + (M ? M.roles.length : 1) + ",minmax(0,1fr))", metaUser: M ? M.user || "" : "", metaChallenge: M ? M.challenge || "" : "", hasMetaOut: !!(M && M.outcome), metaOut: M && M.outcome ? M.outcome.map((text, i) => ({ text, n: "(" + (i + 1) + ")", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry " + (i * 8) + "% cover " + (22 + i * 6) + "%" })) : [], ...(() => { const sn = !!M && M.roles.length > 4, S = sn ? this.roleSnake(M.roles) : { cols: "", cells: [] }; return { metaSnake: sn, metaLine: !!M && !sn, metaSnakeCols: S.cols, metaSnakeCells: S.cells }; })(), metaRoles: M ? M.roles.map((name, i, arr) => ({ name, notLast: i < arr.length - 1, line: narrow ? "flex:none;width:2px;height:12px;margin:4px 0 4px 20px;background-image:linear-gradient(180deg,#1818EA 0 6px,transparent 6px 11px);background-size:2px 11px;background-repeat:repeat-y;animation:om-dash-v 900ms linear infinite" : "flex:none;width:32px;height:2px;background-image:linear-gradient(90deg,#1818EA 0 8px,transparent 8px 14px);background-size:14px 2px;background-repeat:repeat-x;animation:om-dash 900ms linear infinite;margin:0 8px", unit: "display:flex;align-items:center;flex:none", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry " + Math.min(i * 3, 15) + "% entry " + (60 + Math.min(i * 6, 40)) + "%" + (narrow ? ";font-size:14px;line-height:20px;padding:6px 14px" : "") })) : [], metaGoals: M ? M.goals.map(([title, text], i) => ({ title, text, n: "(" + (i + 1) + ")", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% entry 80%" })) : [], items: [] }; }
+      if (b.kind === "text") { const M = (SUB_META[slug] || {})[bi]; return { ...b, topGap: ((bi > 0 && K.blocks[bi - 1].kind === "heading") || (SUB_META[slug] && !b.kicker)) ? "clamp(24px,3vw,48px)" : topGap, isText: true, isMedia: false, hasKicker: !!b.kicker, kickerBig: !!b.kicker && !!SUB_META[slug], kickerSmall: !!b.kicker && !SUB_META[slug], hasTitle: !!b.title, hasRole: !!b.role && !M, hasMeta: !!M, metaRoleCols: narrow ? "repeat(2,minmax(0,1fr))" : "repeat(" + (M ? M.roles.length : 1) + ",minmax(0,1fr))", metaUser: M ? M.user || "" : "", metaChallenge: M ? M.challenge || "" : "", hasMetaOut: !!(M && M.outcome), metaOut: M && M.outcome ? M.outcome.map((text, i) => ({ text, n: "(" + (i + 1) + ")", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry " + (i * 8) + "% cover " + (22 + i * 6) + "%" })) : [], ...(() => { const sn = !!M && M.roles.length > 4, S = sn ? this.roleSnake(M.roles) : { cols: "", cells: [] }; return { metaSnake: sn, metaLine: !!M && !sn, metaSnakeCols: S.cols, metaSnakeCells: S.cells }; })(), metaRoles: M ? M.roles.map((name, i, arr) => ({ name, notLast: i < arr.length - 1, line: narrow ? "flex:none;width:2px;height:12px;margin:4px 0 4px 20px;background-image:linear-gradient(180deg,#1818EA 0 6px,transparent 6px 11px);background-size:2px 11px;background-repeat:repeat-y;animation:om-dash-v 900ms linear infinite" : "flex:none;width:32px;height:2px;background-image:linear-gradient(90deg,#1818EA 0 8px,transparent 8px 14px);background-size:14px 2px;background-repeat:repeat-x;animation:om-dash 900ms linear infinite;margin:0 8px", unit: "display:flex;align-items:center;flex:none", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry " + Math.min(i * 3, 15) + "% entry " + (60 + Math.min(i * 6, 40)) + "%" + (narrow ? ";padding:6px 14px" : "") })) : [], metaGoals: M ? M.goals.map(([title, text], i) => ({ title, text, n: "(" + (i + 1) + ")", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry 0% entry 80%" })) : [], items: [] }; }
       const n = b.items.length, cols = narrow || b.one ? 1 : (n === 1 ? 1 : n === 3 ? 3 : 2);
       const mapped = b.items.map((it, ii) => ({ ratio: it.ratio || "16/9", src: it.src || "", hasSrc: !!it.src && !it.sound, hasSound: !!it.src && !!it.sound, noSrc: !it.src, slotId: it.sid || ("case-" + slug + "-" + sbi + "-" + ii), savedSrc: this.SAVED.indexOf(it.sid || ("case-" + slug + "-" + sbi + "-" + ii)) >= 0 ? "assets/slots/" + (it.sid || ("case-" + slug + "-" + sbi + "-" + ii)) + ".webp" : undefined, figStyle: "margin:0;display:flex;flex-direction:column;gap:10px;min-width:0" + (it.wide ? ";grid-column:1/-1" : "") + (b.split && !narrow && ii === 0 ? ";grid-row:span 2" : "") + (b.stack && !narrow ? (ii < 2 ? ";grid-column:1" : ";grid-column:2;grid-row:1/span 2") : ""), slotLabel: it.t === "v" ? "Drop video poster / image" : "Drop image", cap: it.cap, hasCap: !!it.cap, isVideo: it.t === "v", isImage: it.t !== "v" }));
       if (b.eq && !narrow && n > cols && !b.split) { const rows = []; for (let k = 0; k < n; k += cols) { const ch = mapped.slice(k, k + cols); rows.push({ eq: "1", gridStyle: "display:grid;grid-template-columns:repeat(" + ch.length + ",minmax(0,1fr));gap:24px", items: ch }); } return { isText: false, isMedia: true, paras: [], rows }; }
@@ -1871,9 +1904,18 @@ class Component extends DCLogic {
     const p = inc.play(); if (p && p.catch) p.catch(() => { inc.removeEventListener("playing", start); this.fading = false; });
     if (!inc.paused && inc.readyState >= 3) start();
   };
+  heroFbRef = React.createRef();
+  heroFallback = () => {
+    const v = this.clipRefs[0] && this.clipRefs[0].current, im = this.heroFbRef.current;
+    if (this._hfb || this._hPlayed || !v || !im) return;
+    this._hfb = true; clearTimeout(this._hfbT);
+    im.onload = () => { im.style.opacity = "1"; try { v.pause(); } catch (e) {} v.style.visibility = "hidden"; };
+    im.src = "assets/hero-loop-12s.webp";
+  };
   playClip = (i) => {
+    if (this._hfb) return;
     this.blobClips((i + 1) % HERO_CLIPS.length);
-    this.clipRefs.forEach((r, k) => { const v = r.current; if (!v) return; if (k === i) { if (!v.src) return; try { v.currentTime = HERO_CLIPS[k].at || 0; } catch (e) {} const p = v.play(); if (p && p.catch) p.catch(() => {}); } else if (!v.paused) { clearTimeout(v._pt); v._pt = setTimeout(() => { if (this.state.clip !== k) v.pause(); }, 1000); } });
+    this.clipRefs.forEach((r, k) => { const v = r.current; if (!v) return; if (k === i) { if (!v.src) return; try { v.currentTime = HERO_CLIPS[k].at || 0; } catch (e) {} const p = v.play(); if (p && p.catch) p.catch(() => { if (k === 0) this.heroFallback(); }); } else if (!v.paused) { clearTimeout(v._pt); v._pt = setTimeout(() => { if (this.state.clip !== k) v.pause(); }, 1000); } });
   };
   introImgRef = React.createRef();
 
@@ -1975,7 +2017,7 @@ class Component extends DCLogic {
   };
 
 
-  PILLS = [["Collaborative","#1818EA","#ffffff"],["Organized","#11131A","#ffffff"],["Proactive","#FF810A","#11131A"],["Research first","#ffffff","#11131A"],["Team player","#1818EA","#ffffff"],["Systems thinker","#ffffff","#11131A"],["Curious","#FF810A","#11131A"],["Detail-obsessed","#11131A","#ffffff"]];
+  PILLS = [["Collaborative","#1818EA","#ffffff"],["Organized","var(--ink)","#ffffff"],["Proactive","#FF810A","var(--ink)"],["Research first","#ffffff","var(--ink)"],["Team player","#1818EA","#ffffff"],["Systems thinker","#ffffff","var(--ink)"],["Curious","#FF810A","var(--ink)"],["Detail-obsessed","var(--ink)","#ffffff"]];
   pillBoxRef = React.createRef();
   pillRefs = this.PILLS.map(() => React.createRef());
   aboutTextRef = React.createRef();
@@ -2076,6 +2118,7 @@ class Component extends DCLogic {
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(this.measureHero);
     window.addEventListener("resize", this.measureHero, { passive: true });
     const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    { const hv = this.clipRefs[0].current; if (hv) { hv.addEventListener("playing", () => { this._hPlayed = true; clearTimeout(this._hfbT); }, { once: true }); this._hfbT = setTimeout(() => { if (!this._hPlayed) this.heroFallback(); }, 2000); } }
     setTimeout(() => { this.syncMedia(); const v0 = this.clipRefs[0].current; if (v0) { v0.style.opacity = "1"; v0.style.zIndex = "2"; } this.curClip = 0; this.playClip(0); }, 60);
     if (!still) this.clipT = setInterval(this.nextClip, 4200);
     this.onGridKey = (e) => { const tg = e.target && e.target.tagName; if (tg === "INPUT" || tg === "TEXTAREA" || (e.target && e.target.isContentEditable)) return; if ((e.key === "g" || e.key === "G") && !e.metaKey && !e.ctrlKey && !e.altKey) this.setState(st => ({ gridOn: !st.gridOn })); };
@@ -2087,6 +2130,9 @@ class Component extends DCLogic {
     this.svcTimer = setInterval(() => this.setState(st => ({ svc: (st.svc + 1) % (this.SERVICES.length * 2) })), 1900);
     window.addEventListener("hashchange", this.onHash);
     window.addEventListener("mousemove", this.onMove, { passive: true });
+    this.onHdrScroll = () => { const t = (window.scrollY || 0) <= 0; if (t !== this.state.hdrTop) this.setState({ hdrTop: t }); }; this.onHdrScroll(); window.addEventListener("scroll", this.onHdrScroll, { passive: true });
+    this.measureGlow(); window.addEventListener("resize", this.measureGlow, { passive: true });
+    if (window.ResizeObserver && this.glowRootRef.current) { this.glowRO = new ResizeObserver(() => this.measureGlow()); this.glowRO.observe(this.glowRootRef.current); }
     if (!window.matchMedia("(hover: none)").matches) this.startCursor();
     this.onHash();
     this.burstMedia();
@@ -2116,6 +2162,7 @@ class Component extends DCLogic {
     this.typeT = setTimeout(step, 0);
   };
   componentDidUpdate(prevProps, prevState) {
+    this.measureGlow();
     if (this.state.brand && !this.typing) this.startTyping();
     this.syncTitle();
     if (prevState && prevState.route !== this.state.route) {
@@ -2135,6 +2182,9 @@ class Component extends DCLogic {
     }
   }
   componentWillUnmount() {
+    if (this.onHdrScroll) window.removeEventListener("scroll", this.onHdrScroll);
+    window.removeEventListener("resize", this.measureGlow); if (this.glowRO) this.glowRO.disconnect();
+    clearTimeout(this._hfbT);
     document.removeEventListener("click", this.onLbClick);
     document.removeEventListener("keydown", this.onLbKey);
     cancelAnimationFrame(this.heroRaf);
@@ -2161,6 +2211,13 @@ class Component extends DCLogic {
   cursorDotRef = React.createRef();
   cursorLabelRef = React.createRef();
 
+  glowRootRef = React.createRef();
+  measureGlow = () => {
+    const f = document.getElementById("contact");
+    if (!f) return;
+    const gH = Math.round(f.offsetTop), gT = Math.round(f.offsetTop + f.offsetHeight);
+    if (gH !== this.state.glowH || gT !== this.state.glowT) this.setState({ glowH: gH, glowT: gT });
+  };
   startCursor() {
     if (!window.matchMedia || !window.matchMedia("(pointer:fine)").matches) return;
     this.fine = true;
@@ -2169,21 +2226,18 @@ class Component extends DCLogic {
     if (dot0) dot0.style.opacity = "1";
     const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
     this.cur = { x: cx, y: cy, tx: cx, ty: cy, big: false };
-    const tick = () => {
+    this.curApply = () => {
       const c = this.cur, el = this.cursorRef.current;
-      if (el) {
-        c.x += (c.tx - c.x) * 0.14;
-        c.y += (c.ty - c.y) * 0.14;
-        el.style.transform = "translate3d(" + c.x.toFixed(2) + "px," + c.y.toFixed(2) + "px,0)";
-      }
-      this.curRaf = requestAnimationFrame(tick);
+      if (!el) return;
+      c.x = c.tx; c.y = c.ty;
+      el.style.transform = "translate3d(" + c.x + "px," + c.y + "px,0)";
     };
-    tick();
+    this.curApply();
     this.setBig = (big) => {
       if (big === this.cur.big) return;
       this.cur.big = big;
       const dot = this.cursorDotRef.current, lbl = this.cursorLabelRef.current;
-      if (dot) { dot.style.transform = "scale(" + (big ? 1 : 0.29) + ")"; dot.style.background = big ? "rgba(17,19,26,0.72)" : "#DCDFE5"; }
+      if (dot) { dot.style.transform = "scale(" + (big ? 1 : 0.29) + ")"; dot.style.background = big ? "rgba(var(--ink-rgb),0.72)" : "var(--line)"; }
       if (lbl) lbl.style.opacity = big ? "1" : "0";
     };
     this.onOver = (e) => {
@@ -2213,7 +2267,7 @@ class Component extends DCLogic {
 
   onMove = (e) => {
     this.pt = { x: e.clientX, y: e.clientY };
-    if (this.fine && this.cur) { this.cur.tx = e.clientX; this.cur.ty = e.clientY; const d0 = this.cursorDotRef.current; if (d0 && d0.style.opacity !== "1") d0.style.opacity = "1"; }
+    if (this.fine && this.cur) { this.cur.tx = e.clientX; this.cur.ty = e.clientY; if (this.curApply) this.curApply(); const d0 = this.cursorDotRef.current; if (d0 && d0.style.opacity !== "1") d0.style.opacity = "1"; }
     if (!this.state.hover || this.raf) return;
     this.raf = requestAnimationFrame(() => {
       this.raf = null;
@@ -2278,7 +2332,7 @@ class Component extends DCLogic {
       Object.assign(ghost.style, { position: "fixed", left: r.left + "px", top: r.top + "px", width: r.width + "px", margin: "0", zIndex: "0", pointerEvents: "none", transformOrigin: "50% " + (-r.top + window.innerHeight / 2) + "px", willChange: "transform,opacity" });
       const srcV = page.querySelectorAll("video"), dstV = ghost.querySelectorAll("video");
       dstV.forEach((v, i) => { try { v.muted = true; v.currentTime = srcV[i] ? srcV[i].currentTime : 0; v.pause(); } catch (e) {} });
-      document.body.appendChild(ghost);
+      (this.glowRootRef.current || document.body).appendChild(ghost);
       this.sliding = true;
     }
     this.dissolve(() => {
@@ -2333,7 +2387,7 @@ class Component extends DCLogic {
   }
   label(p) {
     if (p.img) return "display:none";
-    return "position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:Figtree,sans-serif;font-weight:400;font-size:14px;line-height:1.5;color:#646873;padding:0 16px";
+    return "position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:var(--text-2);padding:0 16px";
   }
 
   renderVals() {
@@ -2360,7 +2414,7 @@ class Component extends DCLogic {
       labelStyle: this.label(p),
       placeholderLabel: p.img ? "" : p.title + " — image",
       rolesCaps: p.roles.split(", ").join(" - "),
-      rowStyle: (this.state.vw < 768 ? "display:flex;flex-direction:column;align-items:flex-start;gap:6px;" : "display:grid;grid-template-columns:" + TK.G.row + ";gap:6px " + TK.L.gap + ";_x:clamp(16px,3vw,44px);align-items:center;") + "padding:clamp(22px,2.6vw,34px) clamp(16px,1.8vw,24px);border-top:1px solid " + (this.state.hover === p.slug ? "#F7F8FA" : "#DCDFE5") + ";transition:background 450ms cubic-bezier(0.16,1,0.3,1),border-color 450ms ease;background:" + (this.state.hover === p.slug ? "#F7F8FA" : "transparent") + ";background-clip:border-box;color:#11131A;"
+      rowStyle: (this.state.vw < 768 ? "display:flex;flex-direction:column;align-items:flex-start;gap:6px;" : "display:grid;grid-template-columns:" + TK.G.row + ";gap:6px " + TK.L.gap + ";_x:clamp(16px,3vw,44px);align-items:center;") + "padding:clamp(22px,2.6vw,34px) clamp(16px,1.8vw,24px);border-top:1px solid " + (this.state.hover === p.slug ? "var(--surface)" : "var(--line)") + ";transition:background 450ms cubic-bezier(0.16,1,0.3,1),border-color 450ms ease;background:" + (this.state.hover === p.slug ? "var(--surface)" : "transparent") + ";background-clip:border-box;color:var(--ink);"
     });
 
     const on = !!hovered;
@@ -2370,7 +2424,7 @@ class Component extends DCLogic {
       ctaIn: () => { if (!window.matchMedia("(hover: none)").matches) this.setState({ ctaOn: true }); },
       ctaOut: () => this.setState({ ctaOn: false, ctaKbd: false }),
       ctaFocus: (e) => { let fv = false; try { fv = e.currentTarget.matches(":focus-visible"); } catch (x) {} this.setState({ ctaOn: true, ctaKbd: fv }); },
-      sendStyle: "align-self:flex-start;position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;margin-top:4px;padding:11px 15px 11px 23px;border:1px solid " + (this.state.ctaOn ? "#1818EA" : "#11131A") + ";border-radius:50px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;cursor:pointer;background:#11131A;color:#ffffff;outline:" + (this.state.ctaKbd ? "2px solid #1818EA" : "none") + ";outline-offset:3px;transition:border-color " + (this.state.ctaOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
+      sendStyle: "align-self:flex-start;position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;margin-top:4px;padding:11px 15px 11px 23px;border:1px solid " + (this.state.ctaOn ? "#1818EA" : "var(--ink)") + ";border-radius:50px;white-space:nowrap;cursor:pointer;background:var(--ink);color:#ffffff;outline:" + (this.state.ctaKbd ? "2px solid #1818EA" : "none") + ";outline-offset:3px;transition:border-color " + (this.state.ctaOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
       sendFill: "position:absolute;left:0;bottom:0;width:260%;aspect-ratio:1;border-radius:50%;background:#1818EA;z-index:0;pointer-events:none;will-change:transform;transform:translate(-50%,50%) scale(" + (this.state.ctaOn ? 1 : 0) + ");transition:transform " + (this.state.ctaOn ? "520ms cubic-bezier(0.25,1,0.5,1)" : "400ms cubic-bezier(0.5,0,0.25,1)"),
       sendArrow: "position:relative;flex:none;width:22px;height:22px;display:block;will-change:transform;transition:transform 380ms cubic-bezier(0.22,1,0.36,1);transform:translate(" + (this.state.ctaOn && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ? "2px,-2px" : "0,0") + ")",
       gridCols: Array.from({ length: TK.G.N }, (_, i) => ({ i })),
@@ -2382,8 +2436,8 @@ class Component extends DCLogic {
       isGridView: this.state.pview === "grid",
       setListView: (ev) => { if (ev) ev.preventDefault(); this.setState({ pview: "list", hover: null }); },
       setGridView: (ev) => { if (ev) ev.preventDefault(); this.setState({ pview: "grid", hover: null }); },
-      listBtnStyle: "position:relative;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;padding-bottom:4px;color:" + (this.state.pview === "list" ? "#11131A" : "#646873") + ";background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:" + (this.state.pview === "list" ? "100%" : "0%") + " 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease",
-      gridBtnStyle: "position:relative;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;padding-bottom:4px;color:" + (this.state.pview === "grid" ? "#11131A" : "#646873") + ";background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:" + (this.state.pview === "grid" ? "100%" : "0%") + " 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease",
+      listBtnStyle: "position:relative;text-decoration:none;padding-bottom:4px;color:" + (this.state.pview === "list" ? "var(--ink)" : "var(--text-2)") + ";background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:" + (this.state.pview === "list" ? "100%" : "0%") + " 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease",
+      gridBtnStyle: "position:relative;text-decoration:none;padding-bottom:4px;color:" + (this.state.pview === "grid" ? "var(--ink)" : "var(--text-2)") + ";background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:left bottom;background-size:" + (this.state.pview === "grid" ? "100%" : "0%") + " 1px;transition:background-size 450ms cubic-bezier(0.22,1,0.36,1),color 250ms ease",
       projGridStyle: "display:grid;grid-template-columns:" + TK.G.half + ";gap:" + TK.L.secYS + " " + TK.L.gap,
       showLoader: !NO_LOADER && !this.state.loaded,
       curtainRef: this.curtainRef,
@@ -2396,10 +2450,14 @@ class Component extends DCLogic {
       mastLine1: "display:block;text-wrap:balance;transition:transform 1200ms cubic-bezier(0.22,1,0.36,1) 200ms;transform:translateY(" + (this.state.loaded ? "0" : "110%") + ")",
       mastLine2: "display:block;transition:transform 1200ms cubic-bezier(0.22,1,0.36,1) 360ms;transform:translateY(" + (this.state.loaded ? "0" : "110%") + ")",
       homeWrap: isHome ? "display:block" : "display:none",
+      headerBg: isHome && this.state.hdrTop !== false ? "transparent" : "var(--white)",
+      glowRootRef: this.glowRootRef,
+      glowLayer: "position:absolute;top:0;left:0;right:0;height:" + (this.state.glowH || 0) + "px;overflow:hidden;pointer-events:none;z-index:-1;display:" + (isHome && this.state.glowH ? "block" : "none"),
+      glowInner: "position:absolute;top:0;left:0;right:0;height:" + (this.state.glowT || 0) + "px",
       brandEnter: () => !window.matchMedia("(hover: none)").matches && this.setState({ nav: "brand" }),
       brandLeave: () => this.setState({ nav: null }),
       brandInner: "display:block;transition:transform 420ms cubic-bezier(0.16,1,0.3,1);transform:translateY(" + (this.state.nav === "brand" ? "-1.5em" : "0") + ")",
-      typeChars: TYPE_TOKENS.map((t, i) => { const on = i < this.state.typed; if (!t.icon) return { isChar: true, isIcon: false, c: t.c, style: "color:" + (on ? (t.col || "#11131A") : "#DCDFE5") + ";transition:color 240ms ease" }; return { isChar: false, isIcon: true, pen: t.icon === "pen", curl: t.icon === "curl", lock: t.icon === "lock", spark: t.icon === "spark", play: t.icon === "play", style: "display:inline-block;width:0.86em;height:0.86em;vertical-align:-0.1em;color:" + (on ? (t.col || "#11131A") : "#DCDFE5") + ";transform:" + (t.icon === "curl" ? "rotate(" + (on ? -45 : -10) + "deg);transition:color 240ms ease,transform 900ms cubic-bezier(0.34,1.56,0.64,1)" : "scale(" + (on ? 1 : 0.35) + ") rotate(" + (on ? 0 : -22) + "deg);transition:color 240ms ease,transform 720ms cubic-bezier(0.28,2.4,0.48,0.82)"), curlPath: "stroke-dasharray:1;stroke-dashoffset:" + (on ? 0 : 1) + ";transition:stroke-dashoffset 1100ms cubic-bezier(0.65,0,0.35,1)", shackle: "transform-box:view-box;transform-origin:17px 10.5px;transition:transform 520ms cubic-bezier(0.5,1.8,0.5,1) 380ms;transform:" + (on ? "translateY(0) rotate(0deg)" : "translateY(-3px) rotate(28deg)") }; }),
+      typeChars: TYPE_TOKENS.map((t, i) => { const on = i < this.state.typed; if (!t.icon) return { isChar: true, isIcon: false, c: t.c, style: "color:" + (on ? (t.col || "var(--ink)") : "var(--line)") + ";transition:color 240ms ease" }; return { isChar: false, isIcon: true, pen: t.icon === "pen", curl: t.icon === "curl", lock: t.icon === "lock", spark: t.icon === "spark", play: t.icon === "play", style: "display:inline-block;width:0.86em;height:0.86em;vertical-align:-0.1em;color:" + (on ? (t.col || "var(--ink)") : "var(--line)") + ";transform:" + (t.icon === "curl" ? "rotate(" + (on ? -45 : -10) + "deg);transition:color 240ms ease,transform 900ms cubic-bezier(0.34,1.56,0.64,1)" : "scale(" + (on ? 1 : 0.35) + ") rotate(" + (on ? 0 : -22) + "deg);transition:color 240ms ease,transform 720ms cubic-bezier(0.28,2.4,0.48,0.82)"), curlPath: "stroke-dasharray:1;stroke-dashoffset:" + (on ? 0 : 1) + ";transition:stroke-dashoffset 1100ms cubic-bezier(0.65,0,0.35,1)", shackle: "transform-box:view-box;transform-origin:17px 10.5px;transition:transform 520ms cubic-bezier(0.5,1.8,0.5,1) 380ms;transform:" + (on ? "translateY(0) rotate(0deg)" : "translateY(-3px) rotate(28deg)") }; }),
       heroCtaPress: () => { this.setState({ hcOn: true }); clearTimeout(this._pr_hcOn); this._pr_hcOn = setTimeout(() => this.setState({ hcOn: false }), 700); },
       cvPress: () => { this.setState({ cvOn: true }); clearTimeout(this._pr_cvOn); this._pr_cvOn = setTimeout(() => this.setState({ cvOn: false }), 700); },
       footCtaPress: () => { this.setState({ fcOn: true }); clearTimeout(this._pr_fcOn); this._pr_fcOn = setTimeout(() => this.setState({ fcOn: false }), 700); },
@@ -2408,7 +2466,7 @@ class Component extends DCLogic {
       heroCtaFocus: (e) => { let fv = false; try { fv = e.currentTarget.matches(":focus-visible"); } catch (x) {} this.setState({ hcOn: true, hcKbd: fv }); },
       scrollToWork: (e) => { if (e) e.preventDefault(); const el = document.getElementById("featured") || document.getElementById("work"); if (!el) return; const hd = document.querySelector("[data-site-header]"); const off = (hd ? hd.getBoundingClientRect().height : 72) + 24; const y = el.getBoundingClientRect().top + window.scrollY - off; const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; window.scrollTo({ top: y, behavior: still ? "auto" : "smooth" }); },
       heroCtaWrap: "display:flex;justify-content:center;opacity:" + (this.state.loaded ? 1 : 0) + ";transform:translateY(" + (this.state.loaded ? 0 : 12) + "px);transition:opacity 600ms ease 200ms,transform 700ms cubic-bezier(0.22,1,0.36,1) 200ms",
-      heroCtaStyle: "position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;padding:11px 15px 11px 23px;border:1px solid " + (this.state.hcOn ? "#1818EA" : "#11131A") + ";border-radius:50px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;text-decoration:none;background:#11131A;color:#ffffff;outline:" + (this.state.hcKbd ? "2px solid #1818EA" : "none") + ";outline-offset:3px;transition:border-color " + (this.state.hcOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
+      heroCtaStyle: "position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;padding:11px 15px 11px 23px;border:1px solid " + (this.state.hcOn ? "#1818EA" : "var(--ink)") + ";border-radius:50px;white-space:nowrap;text-decoration:none;background:var(--ink);color:#ffffff;outline:" + (this.state.hcKbd ? "2px solid #1818EA" : "none") + ";outline-offset:3px;transition:border-color " + (this.state.hcOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
       heroCtaFill: "position:absolute;left:0;top:0;width:260%;aspect-ratio:1;border-radius:50%;background:#1818EA;z-index:0;pointer-events:none;will-change:transform;transform:translate(-50%,-50%) scale(" + (this.state.hcOn ? 1 : 0) + ");transition:transform " + (this.state.hcOn ? "520ms cubic-bezier(0.25,1,0.5,1)" : "400ms cubic-bezier(0.5,0,0.25,1)"),
       heroCtaArrow: "position:relative;flex:none;width:22px;height:22px;display:block;will-change:transform;transition:transform 380ms cubic-bezier(0.22,1,0.36,1);transform:translate(" + (this.state.hcOn && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ? "2px,2px" : "0,0") + ")",
       navF: narrow ? "18px" : "clamp(18px,1.25vw,24px)",
@@ -2440,23 +2498,24 @@ class Component extends DCLogic {
       })(),
       heroWordA: "display:block;transition:transform 560ms cubic-bezier(0.16,1,0.3,1);transform:translateY(" + (this.state.brand ? "0" : "110%") + ")",
       heroWordB: "display:block;transition:transform 560ms cubic-bezier(0.16,1,0.3,1);transform:translateY(" + (this.state.brand ? "0" : "110%") + ")",
-      heroFrame: "position:relative;display:block;flex:none;height:1.05em;width:" + (this.state.split ? "1.8667em" : "0px") + ";border-radius:clamp(6px,0.8vw,18px);overflow:hidden;background:#F7F8FA;box-shadow:0 20px 40px -18px rgba(17,19,26,0.28);transform-origin:50% 50%;transition:width 760ms cubic-bezier(0.76,0,0.24,1)",
-      heroClips: HERO_CLIPS.map((hc, i) => ({ hsrc: hc.at ? "" : hc.src, ref: this.clipRefs[i], preload: i === this.state.clip || i === (this.state.clip + 1) % HERO_CLIPS.length ? "auto" : "metadata", style: "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0" })),
+      heroFrame: "position:relative;display:block;flex:none;height:1.05em;width:" + (this.state.split ? "1.8667em" : "0px") + ";border-radius:clamp(6px,0.8vw,18px);overflow:hidden;background:var(--surface);box-shadow:0 20px 40px -18px rgba(var(--ink-rgb),0.28);transform-origin:50% 50%;transition:width 760ms cubic-bezier(0.76,0,0.24,1)",
+      heroClips: HERO_CLIPS.map((hc, i) => ({ hsrc: hc.at ? "" : hc.src, ref: this.clipRefs[i], preload: i === this.state.clip || i === (this.state.clip + 1) % HERO_CLIPS.length ? "auto" : "metadata", style: "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:" + (i === 0 ? "1" : "0") })),
+      heroFbRef: this.heroFbRef,
       pillBoxRef: this.pillBoxRef,
       aboutTextRef: this.aboutTextRef,
-      aboutPills: this.PILLS.map(([label, bg, fg], i) => ({ label, ref: this.pillRefs[i], style: "position:absolute;left:0;top:0;opacity:0;will-change:transform;pointer-events:none;white-space:nowrap;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(18px,calc(0.4vw + 15px),22px);line-height:1;letter-spacing:-0.01em;padding:0.6em 1em 0.65em;border-radius:100px;background:" + bg + ";color:" + fg + ";border:1px solid " + (bg === "#ffffff" ? "#DCDFE5" : bg) })),
+      aboutPills: this.PILLS.map(([label, bg, fg], i) => ({ label, ref: this.pillRefs[i], style: "position:absolute;left:0;top:0;opacity:0;will-change:transform;pointer-events:none;white-space:nowrap;font-weight:500;line-height:1;padding:0.6em 1em 0.65em;border-radius:100px;background:" + bg + ";color:" + fg + ";border:1px solid " + (bg === "#ffffff" ? "var(--line)" : bg) })),
       cvIn: () => { if (!window.matchMedia("(hover: none)").matches) this.setState({ cvOn: true }); },
       cvOut: () => this.setState({ cvOn: false }),
-      cvStyle: "position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;padding:11px 15px 11px 23px;border:1px solid " + (this.state.cvOn ? "#1818EA" : "#11131A") + ";border-radius:50px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;text-decoration:none;background:#11131A;color:#ffffff;transition:border-color " + (this.state.cvOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
+      cvStyle: "position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;padding:11px 15px 11px 23px;border:1px solid " + (this.state.cvOn ? "#1818EA" : "var(--ink)") + ";border-radius:50px;white-space:nowrap;text-decoration:none;background:var(--ink);color:#ffffff;transition:border-color " + (this.state.cvOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1)",
       cvFill: "position:absolute;left:0;bottom:0;width:260%;aspect-ratio:1;border-radius:50%;background:#1818EA;z-index:0;pointer-events:none;will-change:transform;transform:translate(-50%,50%) scale(" + (this.state.cvOn ? 1 : 0) + ");transition:transform " + (this.state.cvOn ? "520ms cubic-bezier(0.25,1,0.5,1)" : "400ms cubic-bezier(0.5,0,0.25,1)"),
       cvArrow: "position:relative;flex:none;width:22px;height:22px;display:block;transition:transform 380ms cubic-bezier(0.22,1,0.36,1);transform:translate(" + (this.state.cvOn ? "2px,-2px" : "0,0") + ")",
       footCtaIn: () => { if (!window.matchMedia("(hover: none)").matches) this.setState({ fcOn: true }); },
       footCtaOut: () => this.setState({ fcOn: false }),
-      footCtaStyle: "position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;padding:11px 15px 11px 23px;border:1px solid " + (this.state.fcOn ? "#1818EA" : "#ffffff") + ";border-radius:50px;font-family:Figtree,sans-serif;font-weight:700;font-size:12px;line-height:1.2;letter-spacing:0.04em;text-transform:uppercase;white-space:nowrap;text-decoration:none;background:#ffffff;color:" + (this.state.fcOn ? "#ffffff" : "#11131A") + ";transition:border-color " + (this.state.fcOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1),color 300ms ease",
+      footCtaStyle: "position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;gap:12px;height:46px;box-sizing:border-box;padding:11px 15px 11px 23px;border:1px solid " + (this.state.fcOn ? "#1818EA" : "#ffffff") + ";border-radius:50px;white-space:nowrap;text-decoration:none;background:#ffffff;color:" + (this.state.fcOn ? "#ffffff" : "var(--ink)") + ";transition:border-color " + (this.state.fcOn ? "480ms" : "380ms") + " cubic-bezier(0.25,1,0.5,1),color 300ms ease",
       footCtaFill: "position:absolute;left:0;bottom:0;width:260%;aspect-ratio:1;border-radius:50%;background:#1818EA;z-index:0;pointer-events:none;will-change:transform;transform:translate(-50%,50%) scale(" + (this.state.fcOn ? 1 : 0) + ");transition:transform " + (this.state.fcOn ? "520ms cubic-bezier(0.25,1,0.5,1)" : "400ms cubic-bezier(0.5,0,0.25,1)"),
       footCtaArrow: "position:relative;flex:none;width:22px;height:22px;display:block;transition:transform 380ms cubic-bezier(0.22,1,0.36,1);transform:translate(" + (this.state.fcOn ? "2px,-2px" : "0,0") + ")",
       contentInStyle: "opacity:" + (this.state.loaded ? 1 : 0) + ";transform:translateY(" + (this.state.loaded ? 0 : 20) + "px);transition:opacity 700ms ease 120ms,transform 700ms cubic-bezier(0.2,0.7,0.2,1) 120ms",
-      brandStyle: "flex:0 0 auto;display:flex;align-items:center;gap:0;font-family:'Funnel Sans',sans-serif;font-weight:500;font-size:clamp(18px,calc(0.4vw + 15px),22px);letter-spacing:0;text-transform:uppercase;color:#11131A;opacity:" + (this.state.brand ? 1 : 0) + ";transition:opacity 260ms ease;",
+      brandStyle: "flex:0 0 auto;display:flex;align-items:center;gap:0;font-weight:500;letter-spacing:0;text-transform:uppercase;color:var(--ink);opacity:" + (this.state.brand ? 1 : 0) + ";transition:opacity 260ms ease;",
       loaderRef: this.loaderRef,
       markRef: this.markRef,
       isHome,
@@ -2477,7 +2536,7 @@ class Component extends DCLogic {
       isCase: idx >= 0,
       goBack: this.goBack,
       toTop: this.toTop,
-      fabStyle: "position:fixed;right:" + TK.L.padPx + "px;bottom:" + TK.L.padPx + "px;z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid rgba(17,19,26,0.08);background:rgba(255,255,255,0.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:#11131A;box-shadow:0 2px 12px rgba(17,19,26,0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity 300ms ease,transform 300ms cubic-bezier(0.16,1,0.3,1);opacity:" + (this.state.showTop ? 1 : 0) + ";transform:translateY(" + (this.state.showTop ? 0 : 12) + "px);pointer-events:" + (this.state.showTop ? "auto" : "none"),
+      fabStyle: "position:fixed;right:" + TK.L.padPx + "px;bottom:" + TK.L.padPx + "px;z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid rgba(var(--ink-rgb),0.08);background:rgba(255,255,255,0.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--ink);box-shadow:0 2px 12px rgba(var(--ink-rgb),0.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity 300ms ease,transform 300ms cubic-bezier(0.16,1,0.3,1);opacity:" + (this.state.showTop ? 1 : 0) + ";transform:translateY(" + (this.state.showTop ? 0 : 12) + "px);pointer-events:" + (this.state.showTop ? "auto" : "none"),
       goAboutPage: this.showAbout,
       sendMail: this.sendMail,
       formRef: this.formRef,
@@ -2514,7 +2573,7 @@ class Component extends DCLogic {
         const vis = a <= 2 ? 1 : 0;
         return {
           name: name,
-          style: "position:absolute;left:0;right:0;top:50%;font-family:'Funnel Sans',sans-serif;font-weight:400;letter-spacing:-0.03em;font-size:clamp(26px,5.4vw,84px);line-height:1;white-space:nowrap;pointer-events:none;color:" + (active ? "#11131A" : "#F7F8FA") + ";font-style:" + (a >= 2 ? "italic" : "normal") + ";transform-origin:0% 50%;transform:translateY(-50%) translateY(" + y.toFixed(1) + "px) scaleY(" + sy.toFixed(3) + ");transition:transform 900ms cubic-bezier(0.34,1,0.28,1),color 700ms ease,opacity 600ms ease;opacity:" + vis
+          style: "position:absolute;left:0;right:0;top:50%;font-family:'Funnel Sans',sans-serif;font-weight:400;letter-spacing:-0.03em;font-size:clamp(26px,5.4vw,84px);line-height:1;white-space:nowrap;pointer-events:none;color:" + (active ? "var(--ink)" : "var(--surface)") + ";font-style:" + (a >= 2 ? "italic" : "normal") + ";transform-origin:0% 50%;transform:translateY(-50%) translateY(" + y.toFixed(1) + "px) scaleY(" + sy.toFixed(3) + ");transition:transform 900ms cubic-bezier(0.34,1,0.28,1),color 700ms ease,opacity 600ms ease;opacity:" + vis
         };
       }),
       lbOpen: !!this.state.lb, lbIsImg: !!(this.state.lb && this.state.lb.type === "i"), lbIsVid: !!(this.state.lb && this.state.lb.type === "v"),
@@ -2559,18 +2618,18 @@ class Component extends DCLogic {
       factCols: (() => { const n = 2 + (this.kase(proj.slug).facts || []).length, vw = this.state.vw; const c = vw >= 1100 ? n : vw >= 640 ? Math.min(n, 3) : 2; return "repeat(" + c + ",minmax(0,1fr))"; })(),
       roleRef: this.roleRef,
       ...(() => { const r = ROLE_STEPS[proj.slug] || [], sn = r.length > 4; const S = sn ? this.roleSnake(r) : { cols: "", cells: [] }; return { roleSnake: sn, roleLine: !sn, roleSnakeCols: S.cols, roleSnakeCells: S.cells }; })(),
-      roleRow: "display:flex;flex-wrap:nowrap;align-items:center",
+      roleRow: "display:flex;flex-wrap:wrap;align-items:center;row-gap:12px",
       goalRef: this.goalRef,
       hasGoals: !!DESIGN_GOALS[proj.slug] && idx >= 0 && UX_CASES.includes(proj.slug),
       hasStory: !!STORY[proj.slug] && idx >= 0 && UX_CASES.includes(proj.slug),
       story: STORY[proj.slug] ? { ...STORY[proj.slug], outcomes: STORY[proj.slug].outcome.map((text, i) => ({ text, n: "(" + (i + 1) + ")", anim: "animation:om-reveal linear both;animation-timeline:view();animation-range:entry " + (i * 8) + "% cover " + (22 + i * 6) + "%" })) } : { user: "", challenge: "", outcomes: [] },
-      goals: (DESIGN_GOALS[proj.slug] || []).map(([title, text], i) => { const on = !!this.state.goalIn, d = i * 120; return { title, text, n: "(" + (i + 1) + ")", card: "display:flex;flex-direction:column;background:#F7F8FA;border-radius:clamp(12px,1.4vw,20px);padding:" + (this.state.vw < 768 ? 20 : 24) + "px;opacity:" + (on ? 1 : 0) + ";transform:translateY(" + (on ? 0 : 32) + "px);transition:opacity 600ms ease " + d + "ms,transform 800ms cubic-bezier(0.22,1,0.36,1) " + d + "ms" }; }),
+      goals: (DESIGN_GOALS[proj.slug] || []).map(([title, text], i) => { const on = !!this.state.goalIn, d = i * 120; return { title, text, n: "(" + (i + 1) + ")", card: "display:flex;flex-direction:column;background:var(--surface);border-radius:clamp(12px,1.4vw,20px);padding:" + (this.state.vw < 768 ? 20 : 24) + "px;opacity:" + (on ? 1 : 0) + ";transform:translateY(" + (on ? 0 : 32) + "px);transition:opacity 600ms ease " + d + "ms,transform 800ms cubic-bezier(0.22,1,0.36,1) " + d + "ms" }; }),
       hasRoles: !!ROLE_STEPS[proj.slug] && idx >= 0 && UX_CASES.includes(proj.slug),
       roleCols: this.state.vw < 768 ? "repeat(2,minmax(0,1fr))" : "repeat(" + ((ROLE_STEPS[proj.slug] || []).length || 1) + ",minmax(0,1fr))",
       roleSteps: (ROLE_STEPS[proj.slug] || []).map((name, i, arr) => {
         const on = !!this.state.roleIn, d = i * 140, ease = "cubic-bezier(0.22,1,0.36,1)", last = i === arr.length - 1;
         return { name, notLast: !last, unit: this.state.vw < 768 ? "display:flex;flex-direction:column;align-items:flex-start" : "display:flex;align-items:center;flex:none",
-          pill: "display:inline-flex;align-items:center;gap:10px;flex:none;white-space:nowrap;padding:10px 20px;border:1px solid #F7F8FA;border-radius:100px;background:#F7F8FA;font-family:Figtree,sans-serif;font-weight:500;font-size:16px;line-height:24px;color:#11131A;opacity:" + (on ? 1 : 0) + ";transform:translateY(" + (on ? 0 : 12) + "px);transition:opacity 500ms ease " + d + "ms,transform 600ms " + ease + " " + d + "ms" + (this.state.vw < 768 ? ";font-size:14px;line-height:20px;padding:6px 14px" : ";font-size:14px;line-height:20px;padding:8px 16px"),
+          pill: "display:inline-flex;align-items:center;gap:10px;flex:none;white-space:nowrap;padding:10px 20px;border:1px solid var(--surface);border-radius:100px;background:var(--surface);color:var(--ink);opacity:" + (on ? 1 : 0) + ";transform:translateY(" + (on ? 0 : 12) + "px);transition:opacity 500ms ease " + d + "ms,transform 600ms " + ease + " " + d + "ms" + (this.state.vw < 768 ? ";padding:6px 14px" : ";padding:8px 16px"),
           line: (this.state.vw < 768 ? "flex:none;width:2px;height:12px;margin:4px 0 4px 20px;background-image:linear-gradient(180deg,#1818EA 0 6px,transparent 6px 11px);background-size:2px 11px;background-repeat:repeat-y;animation:om-dash-v 900ms linear infinite" : "flex:none;width:32px;height:2px;background-image:linear-gradient(90deg,#1818EA 0 8px,transparent 8px 14px);background-size:14px 2px;background-repeat:repeat-x;animation:om-dash 900ms linear infinite;margin:0 8px;transform-origin:left center;transform:scaleX(" + (on ? 1 : 0) + ");transition:transform 700ms " + ease + " " + (d + 200) + "ms")
         };
       }),
