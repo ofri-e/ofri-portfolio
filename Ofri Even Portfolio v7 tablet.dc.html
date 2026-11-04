@@ -148,7 +148,7 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
       <span style="{{ heroBoxA }}"><span style="{{ heroWordA }}"><span ref="{{ heroARef }}" style="{{ heroStretchA }}">Ofri</span></span></span>
       <span style="{{ heroFrame }}">
         <sc-for list="{{ heroClips }}" as="c" hint-placeholder-count="0">
-          <video data-clip="1" data-hsrc="{{ c.hsrc }}" ref="{{ c.ref }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="{{ c.preload }}" poster="assets/hero-still-expoza.jpg" aria-hidden="true" style="{{ c.style }}"></video>
+          <video data-clip="1" data-hsrc="{{ c.hsrc }}" ref="{{ c.ref }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="{{ c.preload }}" poster="assets/hero-first-frame.jpg" aria-hidden="true" style="{{ c.style }}"></video>
         </sc-for>
         <img ref="{{ heroFbRef }}" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0;z-index:3;pointer-events:none">
       </span>
