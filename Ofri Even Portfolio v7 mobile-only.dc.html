@@ -154,7 +154,7 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
     </h1>
       <div style="{{ heroFrame }}">
         <sc-for list="{{ heroClips }}" as="c" hint-placeholder-count="0">
-          <video data-clip="1" data-hsrc="{{ c.hsrc }}" ref="{{ c.ref }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="{{ c.preload }}" poster="assets/hero-first-frame.jpg" aria-hidden="true" style="{{ c.style }}"></video>
+          <video data-clip="1" data-hsrc="{{ c.hsrc }}" ref="{{ c.ref }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="{{ c.preload }}" poster="assets/hero-still-expoza.jpg" aria-hidden="true" style="{{ c.style }}"></video>
         </sc-for>
         <img ref="{{ heroFbRef }}" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;opacity:0;z-index:3;pointer-events:none">
       </div>
@@ -1870,7 +1870,7 @@ class Component extends DCLogic {
   playClip = (i) => {
     if (this._hfb) return;
     this.blobClips((i + 1) % HERO_CLIPS.length);
-    this.clipRefs.forEach((r, k) => { const v = r.current; if (!v) return; if (k === i) { if (!v.src) return; try { v.currentTime = HERO_CLIPS[k].at || 0; } catch (e) {} const p = v.play(); if (p && p.catch) p.catch(() => { if (k === 0) this.heroFallback(); }); } else if (!v.paused) { clearTimeout(v._pt); v._pt = setTimeout(() => { if (this.state.clip !== k) v.pause(); }, 1000); } });
+    this.clipRefs.forEach((r, k) => { const v = r.current; if (!v) return; if (k === i) { if (!v.src) return; try { v.currentTime = HERO_CLIPS[k].at || 0; } catch (e) {} const p = v.play(); if (p && p.catch) p.catch((err) => { if (k === 0 && err && err.name === "NotAllowedError" && /iPhone|iPod/.test(navigator.userAgent)) this.heroFallback(); }); } else if (!v.paused) { clearTimeout(v._pt); v._pt = setTimeout(() => { if (this.state.clip !== k) v.pause(); }, 1000); } });
   };
   introImgRef = React.createRef();
 
@@ -2069,7 +2069,7 @@ class Component extends DCLogic {
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(this.measureHero); if (document.fonts && document.fonts.load) { document.fonts.load('300 100px "Funnel Sans"').then(this.measureHero, () => {}); setTimeout(this.measureHero, 800); setTimeout(this.measureHero, 2000); if (document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", this.measureHero); }
     window.addEventListener("resize", this.measureHero, { passive: true });
     const still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    { const hv = this.clipRefs[0].current; if (hv) { hv.addEventListener("playing", () => { this._hPlayed = true; clearTimeout(this._hfbT); }, { once: true }); this._hfbT = setTimeout(() => { if (!this._hPlayed) this.heroFallback(); }, 2000); } }
+    { const hv = this.clipRefs[0].current; if (hv) { hv.addEventListener("playing", () => { this._hPlayed = true; clearTimeout(this._hfbT); }, { once: true }); if (/iPhone|iPod/.test(navigator.userAgent)) this._hfbT = setTimeout(() => { if (!this._hPlayed) this.heroFallback(); }, 3000); } }
     setTimeout(() => { this.syncMedia(); const v0 = this.clipRefs[0].current; if (v0) { v0.style.opacity = "1"; v0.style.zIndex = "2"; } this.curClip = 0; this.playClip(0); }, 60);
     if (!still) this.clipT = setInterval(this.nextClip, 4200);
     this.onGridKey = (e) => { const tg = e.target && e.target.tagName; if (tg === "INPUT" || tg === "TEXTAREA" || (e.target && e.target.isContentEditable)) return; if ((e.key === "g" || e.key === "G") && !e.metaKey && !e.ctrlKey && !e.altKey) this.setState(st => ({ gridOn: !st.gridOn })); };
