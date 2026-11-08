@@ -1702,7 +1702,7 @@ class Component extends DCLogic {
       this.loadClips();
       document.querySelectorAll("video[data-case-video]").forEach(v => {
         const ds = v.getAttribute("data-src");
-        if (ds && ds.indexOf("{{") < 0 && v.getAttribute("src") !== ds) { const rb = v.getBoundingClientRect(), vh = window.innerHeight; if (rb.top < vh * (this.lite ? 1.2 : 2.5) && rb.bottom > -vh) v.setAttribute("src", ds); }
+        if (ds && ds.indexOf("{{") < 0 && v.getAttribute("src") !== ds) { const rb = v.getBoundingClientRect(), vh = window.innerHeight; if (rb.top < vh * (this.lite ? 1.2 : 2.5) && rb.bottom > -vh) { v.muted = true; v.defaultMuted = true; v.setAttribute("src", ds); } }
         if (v.dataset.sound && !v.controls) v.controls = true;
         if (!v.dataset.wired) {
           v.dataset.wired = "1";
