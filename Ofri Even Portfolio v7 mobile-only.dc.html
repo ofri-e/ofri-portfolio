@@ -2084,15 +2084,15 @@ class Component extends DCLogic {
     setTimeout(this.syncTitle, 0);
     window.addEventListener("scroll", this.onScrollTop, { passive: true });
     const SAVED = this.SAVED;
-    this.ratioTimer = setInterval(this.syncMedia, 400);
-    this.svcTimer = setInterval(() => this.setState(st => ({ svc: (st.svc + 1) % (this.SERVICES.length * 2) })), 1900);
+    this.ratioTimer = setInterval(() => { if (Date.now() - (this._lastScrollAt || 0) < 350) return; this.syncMedia(); }, 400);
+    this.svcTimer = null; /* rotating services list is not shown on mobile; the 1.9s re-render was removed */
     window.addEventListener("hashchange", this.onHash);
     window.addEventListener("popstate", this.onPop);
     this.isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const cn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     this.lite = !!(cn && (cn.saveData || /(^|-)2g$/.test(cn.effectiveType || "")));
     if (this.lite) this.setState({ lite: true });
-    this.onLazyScroll = () => { if (this._lz) return; this._lz = setTimeout(() => { this._lz = 0; this.syncMedia(); }, 180); };
+    this.onLazyScroll = () => { this._lastScrollAt = Date.now(); if (this._lz) return; this._lz = setTimeout(() => { this._lz = 0; this.syncMedia(); }, 180); };
     window.addEventListener("scroll", this.onLazyScroll, { passive: true });
     setTimeout(this.touchFx, 400); setTimeout(this.touchFx, 1500); setTimeout(this.brandFlip, 900);
     this.onLbClick = (e) => { if (PROJECTS.some(p => p.slug === this.state.route)) this.lbOpenFrom(e); };
@@ -2122,7 +2122,7 @@ class Component extends DCLogic {
       } else if (el) { el.style.transition = "transform 280ms cubic-bezier(0.22,1,0.36,1)"; el.style.transform = "translateX(0)"; setTimeout(() => { el.style.transition = ""; el.style.transform = ""; el.style.boxShadow = ""; }, 300); }
     };
     window.addEventListener("touchstart", this.onEdgeStart, { passive: true });
-    window.addEventListener("touchmove", this.onEdgeMove, { passive: false });
+    this.edgeBind = () => { const on = !this.isIOS && PROJECTS.some(p => p.slug === this.state.route); if (on !== !!this._edgeOn) { this._edgeOn = on; if (on) window.addEventListener("touchmove", this.onEdgeMove, { passive: false }); else window.removeEventListener("touchmove", this.onEdgeMove); } }; this.edgeBind();
     window.addEventListener("touchend", this.onEdgeEnd);
     window.addEventListener("touchcancel", this.onEdgeEnd);
     window.addEventListener("mousemove", this.onMove, { passive: true });
@@ -2157,7 +2157,7 @@ class Component extends DCLogic {
     const step = () => { i++; this.setState({ typed: i }); if (i < N) { const t = TYPE_TOKENS[i - 1]; this.typeT = setTimeout(step, t.icon ? 120 : t.c === "," || t.c === "." ? 80 : t.c === " " ? 26 : 15); } };
     this.typeT = setTimeout(step, 0);
   };
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) { if (this.edgeBind && this._edgeRoute !== this.state.route) { this._edgeRoute = this.state.route; this.edgeBind(); }
     this.measureGlow();
     if (this.state.brand && !this.typing) this.startTyping();
     this.syncTitle();
