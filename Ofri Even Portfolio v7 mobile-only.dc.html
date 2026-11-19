@@ -869,15 +869,15 @@ html.om-nocursor:has([data-om-cursor]) input, html.om-nocursor:has([data-om-curs
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;heroVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
 const PROJECTS_ALL = [
-  { slug: "recipe-builder", desc: "One panel for every way to add a recipe, from flow to the canvas card.", tags: ["B2B SaaS","Insurance & banking","Data tools"], title: "Recipe Builder", roles: "UX/UI, Product design", year: "2026", img: "assets/recipe-builder-last.png", video: "assets/recipe-builder-reveal.mp4" },
-  { slug: "pyrite", desc: "A fraud-protection app for older adults that took 2nd place in the final pitch competition.", tags: ["Mobile App","Cybersecurity","Fintech"], title: "Pyrite", roles: "Mobile, UX/UI", year: "2025", img: "assets/pyrite-last.png", video: "assets/pyrite-reveal.mp4" },
-  { slug: "earnix", desc: "Rebuilding Earnix’s design system, from audit to tokens in code.", tags: ["Fintech","Design system","AI workflow"], title: "Elevate Design System", roles: "Design systems, UX/UI", year: "2026", img: "assets/earnix-last.png", video: "assets/earnix-reveal.mp4", cardImg: "assets/earnix-ds-cover-v2.png" },
-  { slug: "beatles-2030", desc: "A web and mobile experience that brings two generations of Beatles fans to the same show.", tags: ["Web & Mobile","Entertainment","Live Events"], title: "The Beatles 2030", roles: "Web & Mobile, UX/UI, Motion", year: "2025", img: "assets/beatles-last.png", video: "assets/beatles-reveal.mp4" },
-  { slug: "taltalim", desc: "A website and app that take the guesswork out of curly hair care, down to scanning any bottle on the shelf.", tags: ["E-commerce","Brand & Identity","Web & Mobile"], title: "Taltalim", roles: "Web & Mobile, UX/UI, Brand & Identity", year: "2024", img: "assets/taltalim-last.png", video: "assets/taltalim-reveal.mp4" },
-  { slug: "expoza", desc: "Typographic identity spotlighting Israel’s next theatre actors.", tags: ["Brand & Identity","Theater","Kinetic Typography"], title: "Expoza", roles: "Branding & Identity, Web, Motion", year: "2025", img: "assets/expoza-last.png", video: "assets/expoza-reveal.mp4" },
-  { slug: "fi-bo", desc: "A foldable board taking learning outdoors.", tags: ["Brand & Identity","Industrial Design","Marketing"], title: "FI_BO", roles: "Branding & Identity, Industrial Design, Motion", year: "2024", img: "assets/fi-bo-last.png", video: "assets/fi-bo-reveal.mp4" },
-  { slug: "t42", desc: "Branding for a tea-first dating festival.", tags: ["Brand & Identity","Marketing","Social"], title: "T42 - Match Cup Festival", roles: "Branding & Identity, Motion, Social", year: "2025", img: "assets/t42-last.png", video: "assets/t42-reveal.mp4" },
-  { hidden: true, slug: "ladies-first", desc: "Title sequence celebrating hip-hop’s pioneering women.", tags: ["Motion","Title Design"], title: "Ladies First", roles: "Motion, Title Design", year: "2025", img: "assets/ladies-first-last.png", video: "assets/ladies-first-reveal.mp4" }
+  { slug: "recipe-builder", desc: "One panel for every way to add a recipe, from flow to the canvas card.", tags: ["B2B SaaS","Insurance & banking","Data tools"], title: "Recipe Builder", roles: "UX/UI, Product design", year: "2026", img: "assets/recipe-builder-last.png", video: "assets/m/recipe-builder-reveal.mp4" },
+  { slug: "pyrite", desc: "A fraud-protection app for older adults that took 2nd place in the final pitch competition.", tags: ["Mobile App","Cybersecurity","Fintech"], title: "Pyrite", roles: "Mobile, UX/UI", year: "2025", img: "assets/pyrite-last.png", video: "assets/m/pyrite-reveal.mp4" },
+  { slug: "earnix", desc: "Rebuilding Earnix’s design system, from audit to tokens in code.", tags: ["Fintech","Design system","AI workflow"], title: "Elevate Design System", roles: "Design systems, UX/UI", year: "2026", img: "assets/earnix-last.png", video: "assets/m/earnix-reveal.mp4", cardImg: "assets/earnix-ds-cover-v2.png" },
+  { slug: "beatles-2030", desc: "A web and mobile experience that brings two generations of Beatles fans to the same show.", tags: ["Web & Mobile","Entertainment","Live Events"], title: "The Beatles 2030", roles: "Web & Mobile, UX/UI, Motion", year: "2025", img: "assets/beatles-last.png", video: "assets/m/beatles-reveal.mp4" },
+  { slug: "taltalim", desc: "A website and app that take the guesswork out of curly hair care, down to scanning any bottle on the shelf.", tags: ["E-commerce","Brand & Identity","Web & Mobile"], title: "Taltalim", roles: "Web & Mobile, UX/UI, Brand & Identity", year: "2024", img: "assets/taltalim-last.png", video: "assets/m/taltalim-reveal.mp4" },
+  { slug: "expoza", desc: "Typographic identity spotlighting Israel’s next theatre actors.", tags: ["Brand & Identity","Theater","Kinetic Typography"], title: "Expoza", roles: "Branding & Identity, Web, Motion", year: "2025", img: "assets/expoza-last.png", video: "assets/m/expoza-reveal.mp4" },
+  { slug: "fi-bo", desc: "A foldable board taking learning outdoors.", tags: ["Brand & Identity","Industrial Design","Marketing"], title: "FI_BO", roles: "Branding & Identity, Industrial Design, Motion", year: "2024", img: "assets/fi-bo-last.png", video: "assets/m/fi-bo-reveal.mp4" },
+  { slug: "t42", desc: "Branding for a tea-first dating festival.", tags: ["Brand & Identity","Marketing","Social"], title: "T42 - Match Cup Festival", roles: "Branding & Identity, Motion, Social", year: "2025", img: "assets/t42-last.png", video: "assets/m/t42-reveal.mp4" },
+  { hidden: true, slug: "ladies-first", desc: "Title sequence celebrating hip-hop’s pioneering women.", tags: ["Motion","Title Design"], title: "Ladies First", roles: "Motion, Title Design", year: "2025", img: "assets/ladies-first-last.png", video: "assets/m/ladies-first-reveal.mp4" }
 ];
 const PROJECTS = PROJECTS_ALL.filter(p => !p.hidden);
 const CASES = {
@@ -1421,7 +1421,7 @@ const CASES = {
      ],
      "media": [
       [
-       { "t": "v", "src": "assets/pyrite-tablet-flow.mp4", "cap": "", "ratio": "16/9" }
+       { "t": "v", "src": "assets/m/pyrite-tablet-flow.mp4", "cap": "", "ratio": "16/9" }
       ]
      ]
     },
@@ -1569,7 +1569,7 @@ const CASES = {
        }
       ],
       [
-       { "t": "v", "src": "assets/pyrite-mobile-flow.mp4", "cap": "", "ratio": "16/9" }
+       { "t": "v", "src": "assets/m/pyrite-mobile-flow.mp4", "cap": "", "ratio": "16/9" }
       ]
      ]
     },
@@ -1645,7 +1645,7 @@ const CASES = {
     [
      {
       "t": "v",
-      "src": "assets/beatles-1.mp4",
+      "src": "assets/m/beatles-1.mp4",
       "sound": true,
       "cap": "Event teaser, edited from found footage and AI-generated material.",
       "ratio": "16/9"
@@ -1758,14 +1758,14 @@ const CASES = {
       [
        {
         "t": "v",
-        "src": "assets/beatles-2.mp4",
+        "src": "assets/m/beatles-2.mp4",
         "sound": true,
         "cap": "About and setlist: each album opens as a record with its tracks",
         "ratio": "16/9"
        },
        {
         "t": "v",
-        "src": "assets/beatles-3.mp4",
+        "src": "assets/m/beatles-3.mp4",
         "sound": true,
         "cap": "Timeline and tickets: ten moments, then a date and a seat",
         "ratio": "16/9"
@@ -1788,7 +1788,7 @@ const CASES = {
        },
        {
         "t": "v",
-        "src": "assets/beatles-4.mp4",
+        "src": "assets/m/beatles-4.mp4",
         "sound": true,
         "cap": "Mobile follow-up playlist generator experience",
         "ratio": "1080/1920"
@@ -1835,7 +1835,7 @@ const CASES = {
   "blocks": []
  },
  "taltalim": {
-  "ds": {"label":"Overview","taglineLines":["Know what's in the bottle"],"tagline":"Know what's in the bottle","roleLine":"My role: designed it end to end, from research and concept to UX/UI for the site and app, and the visual identity","intro":"Taltalim, Hebrew for curls, brings the Curly Girl method to Israeli shoppers. A website explains the method, a questionnaire maps each person's hair, and an app takes over from there: approved products matched to that hair, and a scan for any bottle on the shelf.","meta":[["Year","2024"],["Role","Solo designer"],["Context","Second-year Interactive Design course, Shenkar College. The brief: a website and an app around a phenomenon of my choice"],["Team","Solo"]],"main":{"sid":"case-taltalim-pre-0","cap":"","ratio":"1580/1151"},"impact":[["No more asking on Facebook","Curly-haired users said a scan would replace searching and posting in Facebook groups"],["Built for Israeli shelves","Local products, verified by hand, where international sites fall short"]],"sections":[{"title":"The problem","paras":["The method means avoiding ingredients like sulfates and silicones, but confusing ingredient lists and no clear labeling made it hard to know which products are approved. Curly-haired women across Israel shared the same frustration in blogs and Facebook groups."],"pairs":[["The user","People in Israel with curly hair who follow, or want to start, the Curly Girl method."],["Design goals","Make the method easy to start for an Israeli audience: explain it, match products to each person's hair, and check any bottle on the shelf."]]},{"title":"Research","paras":["Research covered the method and the curl world in depth: blogs and Facebook groups, how curl types are classified internationally, and the questionnaires curl brands run on their own sites. I mapped and verified a sample of local products, and looked at how supermarket and Google Drive apps put scanning one tap away. Four insights stood out."],"insights":[["No local coverage","Global sites rarely list Israeli products, and scans fail."],["Every brand, its own quiz","Brand questionnaires point to their own products, in terms newcomers don't know."],["Endless searching","Google it, post on Facebook, wait for a reply."],["Hands full, in store","The question comes up at the shelf, product in hand."]],"voicesLabel":"Voices from the community","voices":[{"sid":"case-taltalim-voice-1","ph":"Eco Love bottles · 8:5","quote":"“Bought the cream they recommended, and the shampoo from the same brand without checking. Then I saw it foams. Is it even CG?”","ins":"Insight 1","from":"Curly-hair Facebook group · 23 comments"},{"sid":"case-taltalim-voice-2","ph":"Pink post card with the question · 8:5","quote":"“Anyone know products for low-porosity hair, CG approved, that stop frizz and give definition?”","ins":"Insight 3","from":"Curly-hair Facebook group · 6 comments"},{"sid":"case-taltalim-voice-3","ph":"Store shelf of hair products · 8:5","quote":"“How many of us freeze in front of this wall? Pulling out Facebook, searching ‘frizz’, searching ‘CG’…”","ins":"Insight 4","from":"Curly-hair Facebook group · 33 comments"}]},{"title":"The flow","paras":["The website only teaches the method: what to avoid and the basic steps. Its one CTA is the matching questionnaire, which hands off to the app. Users can also start in the app: download, sign up and take the same questionnaire. Either way, the match shapes the home screen and everything after it."],"flow":"taltalim","flowCap":"Two ways in, one questionnaire, and an app built around the match."},{"title":"Key decisions","decisions":[["Verified local data","Product data checked by hand, since community sources weren't current. Each product page shows its tags and explains its key ingredients."],["One general questionnaire, in pictures","Not tied to any brand. Curl type, porosity, thickness and density are chosen by illustration, not by term. The results explain each trait, shape a home screen grouped by product type, and stay in the profile, with an option to retake."],["Answers in one place","Reviews replace scattered Facebook threads. Search takes free text, filters by ingredient and sorts by popularity or number of reviews. Favorites keep what works."],["A verdict, not an analysis","One floating scan button, like in supermarket and Drive apps. At the shelf, the result is simply approved or not: the label can't be changed, so the reasons can wait. Every scan is saved, with unapproved products flagged."]],"media":[[{"sid":"case-taltalim-d-1","ratio":"16/6","cap":"The questionnaire: curl type and thickness, chosen by picture.","ph":"Two web questionnaire screens: curl type and hair thickness · 16:6"}],[{"sid":"case-taltalim-d-2","ratio":"16/10","cap":"The match: each trait explained, then a home screen picked for that hair.","ph":"2 phones: questionnaire results + personal home · 16:10"}],[{"sid":"case-taltalim-d-3","ratio":"10/11","cap":"A product page: verified tags and key ingredients explained.","ph":"1 phone: product page · 10:11"},{"sid":"case-taltalim-d-4","ratio":"10/11","cap":"Search with ingredient filters and sorting, and reviews on every product.","ph":"2 phones: search with filters + reviews · 10:11"}],[{"sid":"case-taltalim-d-5","ratio":"16/10","cap":"Scan on the shelf, get a clear verdict, find it later in recent scans.","ph":"3 phones: camera, “not approved” result, recent scans · 16:10"}]]},{"title":"The website","paras":["One job: teach the method. The ingredients to avoid, each with a short explanation and its own illustration, then the basic steps along a timeline. Every section ends with the same call to the questionnaire."],"media":[[{"sid":"case-taltalim-5-0","ratio":"16/9","cap":"What to avoid, the steps of the method and the call to the questionnaire."},{"sid":"case-taltalim-3-0","ratio":"16/9","cap":"Structure first: wireframe, then the visual design with illustrated ingredients."}]]},{"title":"Prototypes","paras":["Both sides were prototyped end to end: the website's path to the questionnaire, and the app from the questionnaire to a scan on the shelf."],"media":[[{"t":"v","src":"assets/taltalim-01.mp4","ratio":"1/1","cap":"Web prototype: the method's steps, leading to the questionnaire."},{"t":"v","src":"assets/taltalim-02.mp4","ratio":"1/1","cap":"Mobile prototype: questionnaire, match and a scan on the shelf."}]]},{"title":"The result","sub":"Learn the method. Match the products. Check the bottle.","paras":["The brief asked for two parts: explain, then help solve. The experience answers a newcomer's three questions, in order: what is the method, what suits my hair, and is this bottle approved? The website covers the first: the ingredients to avoid, the basic steps, and a call to the questionnaire. In the app, each product page explains why it's approved, and guides explain how to use each product."]},{"title":"Outcome","outcome":[["Prototyped end to end","From the first visit to the website to a scan on the shelf."],["A verified product base","Local products checked by hand against the method's rules."],["A full visual identity","Logo, palette and an illustration set for ingredients and hair traits."]]}]},
+  "ds": {"label":"Overview","taglineLines":["Know what's in the bottle"],"tagline":"Know what's in the bottle","roleLine":"My role: designed it end to end, from research and concept to UX/UI for the site and app, and the visual identity","intro":"Taltalim, Hebrew for curls, brings the Curly Girl method to Israeli shoppers. A website explains the method, a questionnaire maps each person's hair, and an app takes over from there: approved products matched to that hair, and a scan for any bottle on the shelf.","meta":[["Year","2024"],["Role","Solo designer"],["Context","Second-year Interactive Design course, Shenkar College. The brief: a website and an app around a phenomenon of my choice"],["Team","Solo"]],"main":{"sid":"case-taltalim-pre-0","cap":"","ratio":"1580/1151"},"impact":[["No more asking on Facebook","Curly-haired users said a scan would replace searching and posting in Facebook groups"],["Built for Israeli shelves","Local products, verified by hand, where international sites fall short"]],"sections":[{"title":"The problem","paras":["The method means avoiding ingredients like sulfates and silicones, but confusing ingredient lists and no clear labeling made it hard to know which products are approved. Curly-haired women across Israel shared the same frustration in blogs and Facebook groups."],"pairs":[["The user","People in Israel with curly hair who follow, or want to start, the Curly Girl method."],["Design goals","Make the method easy to start for an Israeli audience: explain it, match products to each person's hair, and check any bottle on the shelf."]]},{"title":"Research","paras":["Research covered the method and the curl world in depth: blogs and Facebook groups, how curl types are classified internationally, and the questionnaires curl brands run on their own sites. I mapped and verified a sample of local products, and looked at how supermarket and Google Drive apps put scanning one tap away. Four insights stood out."],"insights":[["No local coverage","Global sites rarely list Israeli products, and scans fail."],["Every brand, its own quiz","Brand questionnaires point to their own products, in terms newcomers don't know."],["Endless searching","Google it, post on Facebook, wait for a reply."],["Hands full, in store","The question comes up at the shelf, product in hand."]],"voicesLabel":"Voices from the community","voices":[{"sid":"case-taltalim-voice-1","ph":"Eco Love bottles · 8:5","quote":"“Bought the cream they recommended, and the shampoo from the same brand without checking. Then I saw it foams. Is it even CG?”","ins":"Insight 1","from":"Curly-hair Facebook group · 23 comments"},{"sid":"case-taltalim-voice-2","ph":"Pink post card with the question · 8:5","quote":"“Anyone know products for low-porosity hair, CG approved, that stop frizz and give definition?”","ins":"Insight 3","from":"Curly-hair Facebook group · 6 comments"},{"sid":"case-taltalim-voice-3","ph":"Store shelf of hair products · 8:5","quote":"“How many of us freeze in front of this wall? Pulling out Facebook, searching ‘frizz’, searching ‘CG’…”","ins":"Insight 4","from":"Curly-hair Facebook group · 33 comments"}]},{"title":"The flow","paras":["The website only teaches the method: what to avoid and the basic steps. Its one CTA is the matching questionnaire, which hands off to the app. Users can also start in the app: download, sign up and take the same questionnaire. Either way, the match shapes the home screen and everything after it."],"flow":"taltalim","flowCap":"Two ways in, one questionnaire, and an app built around the match."},{"title":"Key decisions","decisions":[["Verified local data","Product data checked by hand, since community sources weren't current. Each product page shows its tags and explains its key ingredients."],["One general questionnaire, in pictures","Not tied to any brand. Curl type, porosity, thickness and density are chosen by illustration, not by term. The results explain each trait, shape a home screen grouped by product type, and stay in the profile, with an option to retake."],["Answers in one place","Reviews replace scattered Facebook threads. Search takes free text, filters by ingredient and sorts by popularity or number of reviews. Favorites keep what works."],["A verdict, not an analysis","One floating scan button, like in supermarket and Drive apps. At the shelf, the result is simply approved or not: the label can't be changed, so the reasons can wait. Every scan is saved, with unapproved products flagged."]],"media":[[{"sid":"case-taltalim-d-1","ratio":"16/6","cap":"The questionnaire: curl type and thickness, chosen by picture.","ph":"Two web questionnaire screens: curl type and hair thickness · 16:6"}],[{"sid":"case-taltalim-d-2","ratio":"16/10","cap":"The match: each trait explained, then a home screen picked for that hair.","ph":"2 phones: questionnaire results + personal home · 16:10"}],[{"sid":"case-taltalim-d-3","ratio":"10/11","cap":"A product page: verified tags and key ingredients explained.","ph":"1 phone: product page · 10:11"},{"sid":"case-taltalim-d-4","ratio":"10/11","cap":"Search with ingredient filters and sorting, and reviews on every product.","ph":"2 phones: search with filters + reviews · 10:11"}],[{"sid":"case-taltalim-d-5","ratio":"16/10","cap":"Scan on the shelf, get a clear verdict, find it later in recent scans.","ph":"3 phones: camera, “not approved” result, recent scans · 16:10"}]]},{"title":"The website","paras":["One job: teach the method. The ingredients to avoid, each with a short explanation and its own illustration, then the basic steps along a timeline. Every section ends with the same call to the questionnaire."],"media":[[{"sid":"case-taltalim-5-0","ratio":"16/9","cap":"What to avoid, the steps of the method and the call to the questionnaire."},{"sid":"case-taltalim-3-0","ratio":"16/9","cap":"Structure first: wireframe, then the visual design with illustrated ingredients."}]]},{"title":"Prototypes","paras":["Both sides were prototyped end to end: the website's path to the questionnaire, and the app from the questionnaire to a scan on the shelf."],"media":[[{"t":"v","src":"assets/m/taltalim-01.mp4","ratio":"1/1","cap":"Web prototype: the method's steps, leading to the questionnaire."},{"t":"v","src":"assets/m/taltalim-02.mp4","ratio":"1/1","cap":"Mobile prototype: questionnaire, match and a scan on the shelf."}]]},{"title":"The result","sub":"Learn the method. Match the products. Check the bottle.","paras":["The brief asked for two parts: explain, then help solve. The experience answers a newcomer's three questions, in order: what is the method, what suits my hair, and is this bottle approved? The website covers the first: the ingredients to avoid, the basic steps, and a call to the questionnaire. In the app, each product page explains why it's approved, and guides explain how to use each product."]},{"title":"Outcome","outcome":[["Prototyped end to end","From the first visit to the website to a scan on the shelf."],["A verified product base","Local products checked by hand against the method's rules."],["A full visual identity","Logo, palette and an illustration set for ingredients and hair traits."]]}]},
   "tagline": "Know what's in the bottle",
   "intro": "Taltalim, Hebrew for curls, makes buying hair products under the Curly Girl method simple. A website explains the method, and an app takes over from there: it matches approved products to the user's hair and checks any bottle on the shelf with a scan, with no need to look up each product on Google or in Facebook groups.",
   "overview": [
@@ -1910,7 +1910,7 @@ const CASES = {
     "items": [
      {
       "t": "v",
-      "src": "assets/expoza-1.mp4",
+      "src": "assets/m/expoza-1.mp4",
       "sound": true,
       "cap": "The pre-show screen: the show's title in motion before the performance begins"
      }
@@ -1943,7 +1943,7 @@ const CASES = {
     "items": [
      {
       "t": "v",
-      "src": "assets/expoza-2.mp4",
+      "src": "assets/m/expoza-2.mp4",
       "sound": true,
       "cap": "The website prototype: every show, a page for each, and ticket booking"
      }
@@ -2061,13 +2061,13 @@ const CASES = {
     "items": [
      {
       "t": "v",
-      "src": "assets/fibo-main.mp4",
+      "src": "assets/m/fibo-main.mp4",
       "sound": true,
       "cap": ""
      },
      {
       "t": "v",
-      "src": "assets/fibo-wander.mp4",
+      "src": "assets/m/fibo-wander.mp4",
       "sound": true,
       "cap": ""
      }
@@ -2079,13 +2079,13 @@ const CASES = {
     "items": [
      {
       "t": "v",
-      "src": "assets/fibo-paper.mp4",
+      "src": "assets/m/fibo-paper.mp4",
       "sound": true,
       "cap": ""
      },
      {
       "t": "v",
-      "src": "assets/fibo-bubbles.mp4",
+      "src": "assets/m/fibo-bubbles.mp4",
       "sound": true,
       "cap": ""
      }
@@ -2189,13 +2189,13 @@ const CASES = {
     "items": [
      {
       "t": "v",
-      "src": "assets/t42-tea-for-two.mp4",
+      "src": "assets/m/t42-tea-for-two.mp4",
       "sound": true,
       "cap": ""
      },
      {
       "t": "v",
-      "src": "assets/t42-tea-2.mp4",
+      "src": "assets/m/t42-tea-2.mp4",
       "sound": true,
       "cap": ""
      }
@@ -2215,7 +2215,7 @@ const CASES = {
      },
      {
       "t": "v",
-      "src": "assets/t42-bus-stop.mp4",
+      "src": "assets/m/t42-bus-stop.mp4",
       "sid": "case-t42-8-0",
       "cap": ""
      }
@@ -2250,7 +2250,7 @@ const CASES = {
     "items": [
      {
       "t": "v",
-      "src": "assets/ladies-first.mp4",
+      "src": "assets/m/ladies-first.mp4",
       "sound": true,
       "cap": ""
      }
@@ -2315,7 +2315,7 @@ const ROLE_STEPS = {
 };
 const TYPE_TEXT = "Hi, I'm Ofri, a product designer with a cybersecurity background. I make complex products clear, and bring them to life with branding and motion.";
 const TYPE_TOKENS = [].concat(...["Hi, ", { s: "I’m Ofri", col: "#1818EA" }, " ", { icon: "curl", col: "#1818EA" }, ", ", { br: 1 }, "a ", { s: "product designer", col: "#1818EA" }, " ", { icon: "pen", col: "#1818EA" }, " with ", { br: 1 }, "a cybersecurity background ", { icon: "lock" }, ". ", { br: 1 }, "I make complex products clear, ", { br: 1 }, "and bring them to life with ", { br: 1 }, { s: "branding", col: "#FF810A" }, " ", { icon: "spark", col: "#FF810A" }, " and ", { s: "motion", col: "#FF810A" }, " ", { icon: "play", col: "#FF810A" }, "."].map(p => typeof p === "string" ? Array.from(p).map(c => ({ c })) : p.s ? Array.from(p.s).map(c => ({ c, col: p.col })) : p.br ? [{ br: 1, c: "" }] : [p]));
-const HERO_CLIPS = [["assets/hero-reel-3.mp4", 0]].map(([src, at]) => ({ src, at }));
+const HERO_CLIPS = [["assets/m/hero-reel-3.mp4", 0]].map(([src, at]) => ({ src, at }));
 const COVERS = { "recipe-builder": { src: "assets/earnix-cover.png", ratio: "1944/1104", clip: "" }, pyrite: { src: "assets/pyrite-cover-v2.png", ratio: "1557/1141", clip: "" }, "beatles-2030": { src: "assets/beatles-2030-cover.png", ratio: "1605/1098", clip: "" } };
 const FEATURED = ["recipe-builder", "pyrite", "earnix"];
 const STRIPES = "repeating-linear-gradient(135deg,var(--surface) 0 8px,var(--surface-2) 8px 16px)";
